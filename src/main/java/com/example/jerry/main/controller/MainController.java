@@ -5,7 +5,7 @@
  */
 
 /*
-작성자 : JerryDEV
+작성자 : Min Woo Song
 작성일 : 2023-06-29
 작성시간 : PM 2:39
 작성용도 : main web page client request processing controller file
