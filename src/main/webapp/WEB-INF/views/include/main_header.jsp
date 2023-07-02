@@ -91,11 +91,11 @@
                             </li>
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="${path}/member/register" class="btn btn-default btn-flat"><i
+                                    <a href="${path}/user/register" class="btn btn-default btn-flat"><i
                                             class="fa fa-user-plus"></i><b> 회원가입</b></a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="${path}/member/login" class="btn btn-default btn-flat"><i
+                                    <a href="${path}/user/login" class="btn btn-default btn-flat"><i
                                             class="glyphicon glyphicon-log-in"></i><b> 로그인</b></a>
                                 </div>
                             </li>

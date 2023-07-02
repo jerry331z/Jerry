@@ -110,7 +110,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     $("#checkNickNameButton").click(function () {
-        var value = $("#memberNickName").val();
+        var value = $("#userNickName").val();
         var txt = value.search(/[가-힣]/g);
 
         if (value.length < 1 || value.length > 10) {
@@ -136,7 +136,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 type: "post",
                 url: "./isExistNickName",
                 data: {
-                    member_nickname: $("#memberNickName").val()
+                    member_nickname: $("#userNickName").val()
                 },
                 dataType: "json",
                 success: function (data) {
@@ -159,7 +159,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     $("#checkPhoneNumber").click(function () {
-        var value = $("#memberPhone").val();
+        var value = $("#userPhone").val();
         var regex = new RegExp("^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$");
         if (value.length < 13 || value.length > 13) {
             $("#alertPhone").css({
@@ -178,7 +178,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 type: "post",
                 url: "./isExistPhoneNumber",
                 data: {
-                    member_phone: $("#memberPhone").val()
+                    member_phone: $("#userPhone").val()
                 },
                 dataType: "json",
                 success: function (data) {
@@ -201,7 +201,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     $("#checkEmailButton").click(function () {
-        var email = $("#memberEmail").val();
+        var email = $("#userEmail").val();
         var regex = new RegExp("^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$");
         if (!regex.test(email)) {
             $("#alertEmail").css({
@@ -243,7 +243,7 @@ window.addEventListener("DOMContentLoaded", function () {
             type: "post",
             url: "./checkEmail",
             data: {
-                member_email: $("#memberEmail").val()
+                member_email: $("#userEmail").val()
             },
             dataType: "json",
             success: function (data) {
@@ -287,34 +287,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     $("#joinButton").click(function () {
-        if ($("#alertId").text() != '✔  사용 가능한 아이디입니다.') {
-            alert("아이디 중복확인을 먼저 해주세요.");
-            return;
-        }
-        if ($("#alertPassword").text() != "✔  사용가능한 비밀번호입니다.") {
-            alert("사용이 불가능한 비밀번호 입니다.");
-            return;
-        }
-        if ($("#alterPassword2").text() != "✔  비밀번호가 일치합니다.") {
-            alert("비밀번호가 일치 하지 않습니다.");
-            return;
-        }
-        if ($("#alertNickName").text() != "✔  사용 가능한 닉네임입니다.") {
-            alert("닉네임 중복 확인을 먼저 해주세요.");
-            return;
-        }
-        if ($("#alertPhone").text() != "✔  사용 가능한 휴대폰번호입니다.") {
-            alert("휴대폰 중복 확인을 먼저 해주세요.");
-            return;
-        }
-        if ($("#alertEmail").text() != "✔  사용 가능한 이메일주소입니다.") {
-            alert("이메일 중복 확인을 먼저 해주세요")
-            return;
-        }
-        if ($("#alertCertified").text() != "✔ 메일인증이 완료되었습니다.") {
-            alert("메일인증을 먼저 해주세요.");
-            return;
-        }
         $("#insertForm").submit();
     });
 
