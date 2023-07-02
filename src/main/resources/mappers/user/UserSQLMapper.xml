@@ -1,7 +1,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.user.userSQLMapper">
+<mapper namespace="mappers.user.UserSQLMapper">
     <!-- 회원가입 -->
     <insert id="insertUser">
         insert into jerry_user(user_no, user_id, user_pw, user_nickname, user_gender,
