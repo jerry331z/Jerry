@@ -13,6 +13,7 @@
 
 package com.example.jerry.main.controller;
 
+import com.example.jerry.commons.annotation.LogException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +22,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    @LogException
     public String mainPage() {
+        return "index";
+    }
+
+    @RequestMapping(value = "/main/main", method = RequestMethod.GET)
+    @LogException
+    public String homePage() {
+
         return "index";
     }
 }
