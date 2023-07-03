@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 type: "post",
                 url: "./isExistId",
                 data: {
-                    member_id: $("#joinIdInput").val()
+                    user_id: $("#joinIdInput").val()
                 },
                 dataType: "json",
                 success: function (data) {
@@ -136,7 +136,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 type: "post",
                 url: "./isExistNickName",
                 data: {
-                    member_nickname: $("#userNickName").val()
+                    user_nickname: $("#userNickName").val()
                 },
                 dataType: "json",
                 success: function (data) {
@@ -178,7 +178,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 type: "post",
                 url: "./isExistPhoneNumber",
                 data: {
-                    member_phone: $("#userPhone").val()
+                    user_phone: $("#userPhone").val()
                 },
                 dataType: "json",
                 success: function (data) {
@@ -214,7 +214,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 type: "post",
                 url: "./isExistEmail",
                 data: {
-                    member_email: email
+                    user_email: email
                 },
                 dataType: "json",
                 success: function (data) {
@@ -243,7 +243,7 @@ window.addEventListener("DOMContentLoaded", function () {
             type: "post",
             url: "./checkEmail",
             data: {
-                member_email: $("#userEmail").val()
+                user_email: $("#userEmail").val()
             },
             dataType: "json",
             success: function (data) {
@@ -287,6 +287,34 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     $("#joinButton").click(function () {
+        if ($("#alertId").text() != '✔  사용 가능한 아이디입니다.') {
+            alert("아이디 중복확인을 먼저 해주세요.");
+            return;
+        }
+        if ($("#alertPassword").text() != "✔  사용가능한 비밀번호입니다.") {
+            alert("사용이 불가능한 비밀번호 입니다.");
+            return;
+        }
+        if ($("#alterPassword2").text() != "✔  비밀번호가 일치합니다.") {
+            alert("비밀번호가 일치 하지 않습니다.");
+            return;
+        }
+        if ($("#alertNickName").text() != "✔  사용 가능한 닉네임입니다.") {
+            alert("닉네임 중복 확인을 먼저 해주세요.");
+            return;
+        }
+        if ($("#alertPhone").text() != "✔  사용 가능한 휴대폰번호입니다.") {
+            alert("휴대폰 중복 확인을 먼저 해주세요.");
+            return;
+        }
+        if ($("#alertEmail").text() != "✔  사용 가능한 이메일주소입니다.") {
+            alert("이메일 중복 확인을 먼저 해주세요")
+            return;
+        }
+        if ($("#alertCertified").text() != "✔ 메일인증이 완료되었습니다.") {
+            alert("메일인증을 먼저 해주세요.");
+            return;
+        }
         $("#insertForm").submit();
     });
 

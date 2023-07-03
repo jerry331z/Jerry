@@ -28,11 +28,12 @@
         <section class="content container-fluid">
             <div class="register-box-body">
                 <p class="login-box-msg">회원가입 페이지</p>
-                <form action="${path}/user/insertUserProcess" id="insertForm" method="post">
+                <form:form action="${path}/user/insertUserProcess" id="insertForm"
+                           method="post">
                     <div class="row mt-2">
                         <div class="col">
                             <div class="row mt-1">
-                                <div class="col-lg-5">
+                                <div class="col-5">
                                     <label for="joinIdInput">아이디</label>
                                 </div>
                             </div>
@@ -40,9 +41,18 @@
                             <div class="row mt-1">
                                 <div class="col-lg-5">
                                     <input type="text" id="joinIdInput" class="form-control" name="user_id"
-                                           placeholder="아이디를 입력하세요"/>
+                                                placeholder="아이디를 입력하세요"/>
                                 </div>
+
+                                <div class="col-lg-1 d-grid">
+                                    <button type="button" class="btn btn-primary pull-right"
+                                            id="checkIdButton">중복확인
+                                    </button>
+                                </div>
+
+                                <div class="col my-auto" id="alertId"></div>
                             </div>
+
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
@@ -53,8 +63,10 @@
                             <div class="row mt-1">
                                 <div class="col-lg-5">
                                     <input type="password" id="changePassword" class="form-control"
-                                           placeholder="비밀번호를 입력하세요" name="user_pw"/>
+                                                placeholder="비밀번호를 입력하세요" name="user_pw"/>
                                 </div>
+
+                                <div class="col my-auto" id="alterPassword"></div>
                             </div>
 
                             <div class="row mt-1">
@@ -68,10 +80,7 @@
                                     <input type="password" id="confirmPassword" class="form-control"
                                            placeholder="비밀번호를 한번 더 입력해주세요">
                                 </div>
-                            </div>
-
-                            <div class="row mt-1">
-                                <div class="col-lg-5" id="alterPassword2"></div>
+                                <div class="col my-auto" id="alterPassword2"></div>
                             </div>
 
                             <div class="row mt-1">
@@ -82,9 +91,18 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="text" id="userNickName" class="form-control" name="user_nickname"
-                                           placeholder="닉네임을 입력해주세요"/>
+                                    <input type="text" id="userNickName" class="form-control"
+                                                name="user_nickname"
+                                                placeholder="닉네임을 입력해주세요"/>
                                 </div>
+
+                                <div class="col-lg-1 d-grid">
+                                    <button type="button" class="btn btn-primary pull-right"
+                                            id="checkNickNameButton">닉네임 중복확인
+                                    </button>
+                                </div>
+
+                                <div class="col my-auto" id="alertNickName"></div>
                             </div>
 
                             <div class="row mt-1">
@@ -98,6 +116,7 @@
                                     <input type="radio" id="userGender" name="user_gender" value="M"/>남
                                     <input type="radio" id="userGender" name="user_gender" value="W"/>여
                                 </div>
+                                <div class="col-lg-5" id="alertGender"></div>
                             </div>
 
                             <div class="row mt-1">
@@ -109,8 +128,10 @@
                             <div class="row mt-1">
                                 <div class="col-lg-5">
                                     <input type="date" id="userBirth" class="form-control" name="user_birth"
-                                           placeholder="생년월일을 선택해주세요"/>
+                                                placeholder="생년월일을 선택해주세요"/>
                                 </div>
+
+                                <div class="col-lg-5" id="alertBirth"></div>
                             </div>
 
                             <div class="row mt-1">
@@ -122,8 +143,16 @@
                             <div class="row mt-1">
                                 <div class="col-lg-5">
                                     <input type="text" id="userPhone" class="form-control" name="user_phone"
-                                           placeholder="휴대폰번호를 입력해주세요"/>
+                                                placeholder="휴대폰번호를 입력해주세요"/>
                                 </div>
+
+                                <div class="col-lg-1 d-grid">
+                                    <button type="button" class="btn btn-primary pull-right"
+                                            id="checkPhoneNumber">휴대폰 중복확인
+                                    </button>
+                                </div>
+
+                                <div class="col my-auto" id="alertPhone"></div>
                             </div>
 
                             <div class="row mt-1">
@@ -135,59 +164,37 @@
                             <div class="row mt-1">
                                 <div class="col-lg-5">
                                     <input type="text" id="userEmail" class="form-control" name="user_email"
-                                           placeholder="이메일주소를 입력해주세요"/>
+                                                placeholder="이메일주소를 입력해주세요"/>
                                 </div>
-                            </div>
 
-                            <div class="row mt-1">
-                                <div class="col d-grid">
+                                <div class="col-lg-1 d-grid">
                                     <button type="button" id="checkEmailButton"
-                                            class="btn btn-primary" style="height:36px;" disabled='disabled'>인증번호 발송
+                                            class="btn btn-primary pull-right">메일 중복 체크
                                     </button>
                                 </div>
+
+                                <div class="col my-auto" id="alertEmail"></div>
                             </div>
 
-                            <div class="row mt-1">
-                                <div class="col bi bi-exclamation-square-fill deepblue">
-                                    인증번호 발송은 서버 상황에따라 5초에서 10초정도 시간이 걸릴 수 있습니다.
-                                </div>
-                            </div>
-
-                            <div class="row mt-1">
+                            <div class="row mt-3">
                                 <div class="col-lg-5">
                                     <input class="form-control" id="checkEmail" type="text"
                                            placeholder="인증번호를 입력해주세요." aria-label="default input example"
                                            disabled="disabled">
                                 </div>
+
+                                <div class="col-lg-1 d-grid">
+                                    <button type="button" class="btn btn-primary pull-left" id="emailCheck"
+                                            disabled="disabled">인증번호 발송
+                                    </button>
+                                </div>
+
+                                <div class="col my-auto" id="alertCertified"></div>
                             </div>
 
                             <div class="row mt-1">
-                                <div class="col-lg-5" id="alertCertified"></div>
-                            </div>
-
-                            <div class="row mt-1">
-                                <div class="col-lg-5">
-                                    <section name="question_no" class="form-select" id="userQuestion">
-                                        <c:forEach items="${data}" var="question">
-                                            <option value="${question.question_no}">
-                                                    ${question.question_content}
-                                            </option>
-                                        </c:forEach>
-                                    </section>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-lg-5 fs-5"><input class="form-control" id="userFindAnswer"
-                                                                  name="user_findAnswer"
-                                                                  type="text" placeholder="비밀번호 찾기 정답을 입력해주세요"
-                                                                  aria-label="default input example"/>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-7 bi bi-exclamation-square-fill orange" style="font-size : 10px;">
-                                    비밀번호 찾기 답변은 고객님의 비밀번호 분실시 이용됩니다. 신중하게 기입해주시기 바랍니다.
+                                <div class="col bi bi-exclamation-square-fill deepblue">
+                                    인증번호 발송은 서버 상황에따라 5초에서 10초정도 시간이 걸릴 수 있습니다.
                                 </div>
                             </div>
 
@@ -201,8 +208,8 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" id="user_image" name="user_image" value="default-user-image.jpg">
-                </form>
+                    <input type="hidden" id="userImage" name="user_image" value="default-user-image.jpg">
+                </form:form>
             </div>
         </section>
     </div>
@@ -212,10 +219,5 @@
 </div>
 
 <%@ include file="../include/plugin_js.jsp" %>
-<script type="text/javascript">
-    $("#joinButton").click(function () {
-        $("#insertForm").submit();
-    });
-</script>
 </body>
 </html>

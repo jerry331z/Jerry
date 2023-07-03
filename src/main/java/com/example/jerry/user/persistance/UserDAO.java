@@ -19,4 +19,16 @@ public interface UserDAO {
 
     /* 회원가입 프로세스 */
     public void insertUser(UserVo param);
+
+    /* 회원가입 아이디 중복 체크 */
+    public int isExistId(String user_id);
+
+    /* 회원가입 닉네임 중복 체크 */
+    public int isExistNickName(String user_nickname);
+
+    /* 회원가입 휴대폰번호 중복 체크 */
+    public int isExistPhoneNumber(String user_phone);
+
+    /* 회원가입 이메일 중복 체크 */
+    public int isExistEmail(String user_email);
 }

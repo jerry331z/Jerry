@@ -30,4 +30,28 @@ public class UserServiceImpl implements UserService {
     public void insertUser(UserVo param) {
         userDAO.insertUser(param);
     }
+
+    /* 회원가입 아이디 중복 체크 */
+    @Override
+    public int isExistId(String user_id) {
+        return userDAO.isExistId(user_id);
+    }
+
+    /* 회원가입 닉네임 중복체크 */
+    @Override
+    public int isExistNickName(String user_nickname) {
+        return userDAO.isExistNickName(user_nickname);
+    }
+
+    /* 회원가입 휴대폰번호 중복체크 */
+    @Override
+    public int isExistPhoneNumber(String user_phone) {
+        return userDAO.isExistPhoneNumber(user_phone);
+    }
+
+    /* 회원가입 이메일 중복 체크 */
+    @Override
+    public int isExistEmail(String user_email) {
+        return userDAO.isExistEmail(user_email);
+    }
 }
