@@ -23,9 +23,13 @@ import org.springframework.stereotype.Repository;
 public class UserDAOImpl implements UserDAO{
 
     private static final String NAMESPACE = "mappers.user.UserSQLMapper";
+    private final SqlSession sqlSession;
 
     @Autowired
-    private SqlSession sqlSession;
+    public UserDAOImpl(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
+    }
+
 
     @Override
     @LogException

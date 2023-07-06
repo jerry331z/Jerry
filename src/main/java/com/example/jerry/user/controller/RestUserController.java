@@ -25,10 +25,14 @@ import java.util.HashMap;
 @RequestMapping(value = "/user/*")
 public class RestUserController {
 
-    HashMap<String, Object> data = new HashMap<String, Object>();
+    HashMap<String, Object> data = new HashMap<>();
+
+    private final UserService userService;
 
     @Autowired
-    UserService userService;
+    public RestUserController(UserService userService) {
+        this.userService = userService;
+    }
 
     /* 회원가입 아이디 중복 체크 */
     @PostMapping(value = "isExistId")
