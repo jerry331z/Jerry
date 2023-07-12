@@ -28,7 +28,7 @@
         <section class="content container-fluid">
             <div class="register-box-body">
                 <p class="login-box-msg">회원가입 페이지</p>
-                <form:form action="${path}/user/insertUserProcess" id="insertForm"
+                <form:form action="${path}/user/insertUserProcess" modelAttribute="userVo" id="insertForm"
                            method="post">
                     <div class="row mt-2">
                         <div class="col">
@@ -40,7 +40,7 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="text" id="joinIdInput" class="form-control" name="user_id"
+                                    <form:input type="text" id="joinIdInput" class="form-control" path="user_id"
                                                 placeholder="아이디를 입력하세요"/>
                                 </div>
 
@@ -50,7 +50,7 @@
                                     </button>
                                 </div>
 
-                                <div class="col my-auto" id="alertId"></div>
+                                <div class="col my-auto" id="alertId"><form:errors path="user_id"/></div>
                             </div>
 
 
@@ -62,11 +62,11 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="password" id="changePassword" class="form-control"
-                                                placeholder="비밀번호를 입력하세요" name="user_pw"/>
+                                    <form:input type="password" id="changePassword" class="form-control"
+                                                placeholder="비밀번호를 입력하세요" path="user_pw"/>
                                 </div>
 
-                                <div class="col my-auto" id="alterPassword"></div>
+                                <div class="col my-auto" id="alterPassword"><form:errors path="user_pw"/></div>
                             </div>
 
                             <div class="row mt-1">
@@ -91,8 +91,8 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="text" id="userNickName" class="form-control"
-                                                name="user_nickname"
+                                    <form:input type="text" id="userNickName" class="form-control"
+                                                path="user_nickname"
                                                 placeholder="닉네임을 입력해주세요"/>
                                 </div>
 
@@ -113,10 +113,10 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="radio" id="userGender" name="user_gender" value="M"/>남
-                                    <input type="radio" id="userGender" name="user_gender" value="W"/>여
+                                    <form:radiobutton id="userGender" path="user_gender" value="M"/>남
+                                    <form:radiobutton id="userGender" path="user_gender" value="W"/>여
                                 </div>
-                                <div class="col-lg-5" id="alertGender"></div>
+                                <div class="col-lg-5" id="alertGender"><form:errors path="user_gender"/></div>
                             </div>
 
                             <div class="row mt-1">
@@ -127,11 +127,11 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="date" id="userBirth" class="form-control" name="user_birth"
+                                    <form:input type="date" id="userBirth" class="form-control" path="user_birth"
                                                 placeholder="생년월일을 선택해주세요"/>
                                 </div>
 
-                                <div class="col-lg-5" id="alertBirth"></div>
+                                <div class="col-lg-5" id="alertBirth"><form:errors path="user_birth"/></div>
                             </div>
 
                             <div class="row mt-1">
@@ -142,7 +142,7 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="text" id="userPhone" class="form-control" name="user_phone"
+                                    <form:input type="text" id="userPhone" class="form-control" path="user_phone"
                                                 placeholder="휴대폰번호를 입력해주세요"/>
                                 </div>
 
@@ -152,7 +152,7 @@
                                     </button>
                                 </div>
 
-                                <div class="col my-auto" id="alertPhone"></div>
+                                <div class="col my-auto" id="alertPhone"><form:errors path="user_phone"/></div>
                             </div>
 
                             <div class="row mt-1">
@@ -163,7 +163,7 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <input type="text" id="userEmail" class="form-control" name="user_email"
+                                    <form:input type="text" id="userEmail" class="form-control" path="user_email"
                                                 placeholder="이메일주소를 입력해주세요"/>
                                 </div>
 
@@ -173,7 +173,7 @@
                                     </button>
                                 </div>
 
-                                <div class="col my-auto" id="alertEmail"></div>
+                                <div class="col my-auto" id="alertEmail"><form:errors path="user_email" /></div>
                             </div>
 
                             <div class="row mt-3">

@@ -291,7 +291,7 @@ window.addEventListener("DOMContentLoaded", function () {
             alert("아이디 중복확인을 먼저 해주세요.");
             return;
         }
-        if ($("#alertPassword").text() != "✔  사용가능한 비밀번호입니다.") {
+        if ($("#alterPassword").text() != "✔  사용가능한 비밀번호입니다.") {
             alert("사용이 불가능한 비밀번호 입니다.");
             return;
         }
