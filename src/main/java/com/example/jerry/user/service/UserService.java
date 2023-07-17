@@ -14,6 +14,7 @@
 package com.example.jerry.user.service;
 
 
+import com.example.jerry.user.domain.LoginDTO;
 import com.example.jerry.user.domain.UserVo;
 
 public interface UserService {
@@ -32,4 +33,7 @@ public interface UserService {
 
     /* 회원가입 이메일 중복 체크 */
     int isExistEmail(String user_email);
+
+    //  로그인
+    public UserVo login(LoginDTO loginDTO);
 }

@@ -19,7 +19,8 @@
 <%--head.jsp--%>
 <%@ include file="../include/head.jsp" %>
 
-<body class="hold-transition login-page">
+<body class="hold-transition skin-blue login-page" oncontextmenu="return false" oncopy="return false"
+      oncut="return false" onpaste="return false" onselect="return false">
 <div class="wrapper">
 
     <%--main_header.jsp--%>
@@ -34,32 +35,31 @@
     <div class="content-wrapper">
         <%-- Content Header (Page header) --%>
         <div class="login-box-body">
-            <form action="${path}/user/loginPost" method="post">
-                <div class="form-group has-feedback">
-                    <input type="text" name="uid" class="form-control" placeholder="아아디">
-                    <span class="glyphicon glyphicon-exclamation-sign form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" name="upw" class="form-control" placeholder="비밀번호">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
-                <div class="row">
-                    <div class="col-xs-5">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox" name="useCookie"> 로그인유지
-                            </label>
-                        </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" id="inputId" name="uid" class="form-control" placeholder="아아디">
+                <span class="glyphicon glyphicon-exclamation-sign form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" id="inputPw" name="upw" class="form-control" placeholder="비밀번호">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-5">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox" name="useCookie"> 로그인유지
+                        </label>
                     </div>
-                    <!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">
-                            <i class="fa fa-sign-in"></i> 로그인
-                        </button>
-                    </div>
-                    <!-- /.col -->
                 </div>
-            </form>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="button" id="loginButton" class="btn btn-primary btn-block btn-flat">
+                        <i class="fa fa-sign-in"></i> 로그인
+                    </button>
+                </div>
+                <!-- /.col -->
+            </div>
             <%--------------------------
               | Your Page Content Here |
               --------------------------%>

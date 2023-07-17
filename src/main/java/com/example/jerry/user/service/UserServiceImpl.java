@@ -14,6 +14,7 @@
 package com.example.jerry.user.service;
 
 import com.example.jerry.commons.annotation.LogException;
+import com.example.jerry.user.domain.LoginDTO;
 import com.example.jerry.user.domain.UserVo;
 import com.example.jerry.user.persistance.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public int isExistEmail(String user_email) {
         return userDAO.isExistEmail(user_email);
+    }
+
+    //  로그인
+    @Override
+    @LogException
+    public UserVo login(LoginDTO loginDTO) {
+        return userDAO.selectByIdAndPw(loginDTO);
     }
 }

@@ -30,3 +30,5 @@
 <script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- register member -->
 <script src="/dist/js/user/register.js" type="text/javascript"></script>
+<!-- user login -->
+<script src="/dist/js/user/login.js" type="text/javascript"></script>

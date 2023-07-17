@@ -13,6 +13,9 @@
 
 package com.example.jerry.user.controller;
 
+import com.example.jerry.commons.annotation.LogException;
+import com.example.jerry.user.domain.LoginDTO;
+import com.example.jerry.user.domain.UserVo;
 import com.example.jerry.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -136,6 +140,36 @@ public class RestUserController {
 
         data.put("code", checkNum);
 
+        return data;
+    }
+
+    //  유저로그인
+    @PostMapping(value = "userLoginProcess")
+    @LogException
+    public HashMap<String, Object> userLoginProcess(LoginDTO loginDTO, HttpSession session) {
+
+        UserVo sessionUser = userService.login(loginDTO);
+        if (sessionUser != null) {
+            String state = sessionUser.getUser_status();
+            if (state.equals("Inactive")) {
+                data.put("result", "out");
+            } else {
+                data.put("result", "success");
+                session.setAttribute("sessionUser", sessionUser);
+            }
+        }
+
+        return data;
+    }
+
+    //  유저 로그아웃
+    @PostMapping(value = "userLogoutProcess")
+    @LogException
+    public HashMap<String, Object> userLogoutProcess(HttpSession session) {
+
+        UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
+        session.removeAttribute("sessionUser");
+        session.invalidate();
         return data;
     }
 }

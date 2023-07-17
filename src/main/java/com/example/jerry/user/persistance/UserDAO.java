@@ -13,6 +13,7 @@
 
 package com.example.jerry.user.persistance;
 
+import com.example.jerry.user.domain.LoginDTO;
 import com.example.jerry.user.domain.UserVo;
 
 public interface UserDAO {
@@ -31,4 +32,7 @@ public interface UserDAO {
 
     /* 회원가입 이메일 중복 체크 */
     public int isExistEmail(String user_email);
+
+    //  로그인
+    public UserVo selectByIdAndPw(LoginDTO loginDTO);
 }

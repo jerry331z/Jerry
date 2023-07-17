@@ -30,21 +30,21 @@
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <c:if test="${not empty login}">
+                <c:if test="${not empty sessionUser}">
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="${path}/dist/img/profile${login.uimage}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">${login.uname}</span>
+                            <img src="${path}/dist/img/profile/${sessionUser.user_image}" class="user-image" alt="User Image">
+                            <span class="hidden-xs">${sessionUser.user_nickname}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
-                                <img src="${path}/dist/img/profile/${login.uimage}" class="img-circle" alt="User Image">
+                                <img src="${path}/dist/img/profile/${sessionUser.user_image}" class="img-circle" alt="User Image">
                                 <p>
                                     <small>
-                                        가입일자 : <fmt:formatDate value="${login.regdate}" pattern="yyyy-MM-dd"/>
+                                        가입일자 : <fmt:formatDate value="${sessionUser.user_join_date}" pattern="yyyy-MM-dd"/>
                                     </small>
                                     <small>
-                                        최근로그인일자 : <fmt:formatDate value="${login.logdate}"
+                                        최근로그인일자 : <fmt:formatDate value="${sessionUser.user_last_connection_date}"
                                                                   pattern="yyyy-MM-dd a HH:mm"/>
                                     </small>
                                 </p>
@@ -68,14 +68,14 @@
                                             class="fa fa-info-circle"></i><b> 내 프로필</b></a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="${path}/user/logout" class="btn btn-default btn-flat"><i
-                                            class="glyphicon glyphicon-log-out"></i><b> 로그아웃</b></a>
+                                    <button id="logoutButton" class="btn btn-default btn-flat"><i
+                                            class="glyphicon glyphicon-log-out"></i><b> 로그아웃</b></button>
                                 </div>
                             </li>
                         </ul>
                     </li>
                 </c:if>
-                <c:if test="${empty login}">
+                <c:if test="${empty sessionUser}">
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="/dist/img/default-user-image.jpg" class="user-image" alt="User Image">

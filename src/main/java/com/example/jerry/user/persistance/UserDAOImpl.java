@@ -14,13 +14,14 @@
 package com.example.jerry.user.persistance;
 
 import com.example.jerry.commons.annotation.LogException;
+import com.example.jerry.user.domain.LoginDTO;
 import com.example.jerry.user.domain.UserVo;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 
     private static final String NAMESPACE = "mappers.user.UserSQLMapper";
     private final SqlSession sqlSession;
@@ -59,5 +60,12 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public int isExistEmail(String user_email) {
         return sqlSession.selectOne(NAMESPACE + ".isExistEmail", user_email);
+    }
+
+    //  로그인
+    @Override
+    @LogException
+    public UserVo selectByIdAndPw(LoginDTO loginDTO) {
+        return sqlSession.selectOne(NAMESPACE + ".selectByIdAndPw", loginDTO);
     }
 }

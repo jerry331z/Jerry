@@ -21,7 +21,7 @@
 
         <%-- Sidebar user panel (optional) --%>
         <div class="user-panel">
-            <c:if test="${empty login}">
+            <c:if test="${empty sessionUser}">
                 <div class="pull-left image">
                     <img src="/dist/img/default-user-image.jpg" class="img-circle" alt="User Image">
                 </div>
@@ -31,12 +31,12 @@
                     <a href="#"><i class="fa fa-circle text-danger"></i> OFFLINE</a>
                 </div>
             </c:if>
-            <c:if test="${not empty login}">
+            <c:if test="${not empty sessionUser}">
                 <div class="pull-left image">
-                    <img src="${path}/dist/img/profile${login.uimage}" class="img-circle" alt="User Image">
+                    <img src="${path}/dist/img/profile/${sessionUser.user_image}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>${login.uname}</p>
+                    <p>${sessionUser.user_nickname}</p>
                         <%-- Status --%>
                     <a href="#"><i class="fa fa-circle text-success"></i> ONLINE</a>
                 </div>
