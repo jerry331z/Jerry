@@ -40,4 +40,9 @@
     <select id="selectByIdAndPw" resultType="UserVo">
         select * from jerry_user where user_id = #{user_id} and user_pw = #{user_pw}
     </select>
+
+    <!-- 최종 로그인 시간 -->
+    <update id="updateLastConnectionDate">
+        update jerry_user set user_last_connection_date = SYSDATE where user_id = #{user_id}
+    </update>
 </mapper>

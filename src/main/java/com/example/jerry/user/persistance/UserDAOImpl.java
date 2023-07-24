@@ -68,4 +68,9 @@ public class UserDAOImpl implements UserDAO {
     public UserVo selectByIdAndPw(LoginDTO loginDTO) {
         return sqlSession.selectOne(NAMESPACE + ".selectByIdAndPw", loginDTO);
     }
+
+    //  최종로그인 시간 업데이트
+    public void updateLastConnectionDate(LoginDTO loginDTO) {
+        sqlSession.update(NAMESPACE + ".updateLastConnectionDate", loginDTO);
+    }
 }

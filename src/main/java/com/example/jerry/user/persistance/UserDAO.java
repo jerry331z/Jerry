@@ -35,4 +35,7 @@ public interface UserDAO {
 
     //  로그인
     public UserVo selectByIdAndPw(LoginDTO loginDTO);
+
+    //  최종 로그인 시간 업데이트
+    public void updateLastConnectionDate(LoginDTO loginDTO);
 }

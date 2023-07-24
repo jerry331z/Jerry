@@ -64,6 +64,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @LogException
     public UserVo login(LoginDTO loginDTO) {
+        userDAO.updateLastConnectionDate(loginDTO);
         return userDAO.selectByIdAndPw(loginDTO);
     }
 }
