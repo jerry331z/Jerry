@@ -44,14 +44,23 @@
                 <input type="password" id="inputPw" name="upw" class="form-control" placeholder="비밀번호">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
+
+            <!-- /.col -->
             <div class="row">
-                <div class="col-xs-5">
+                <div class="col-xs-2">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox" name="useCookie"> 로그인유지
+                            <input type="checkbox" id="userCookie" > 로그인유지
                         </label>
                     </div>
                 </div>
+
+                <div class="col-xs-2">
+                    <div class="checkbox icheck">
+                        <input type="checkbox" id="saveIdBox" > 아이디저장
+                    </div>
+                </div>
+
                 <!-- /.col -->
                 <div class="col-xs-4">
                     <button type="button" id="loginButton" class="btn btn-primary btn-block btn-flat">
@@ -60,12 +69,13 @@
                 </div>
                 <!-- /.col -->
             </div>
-            <%--------------------------
-              | Your Page Content Here |
-              --------------------------%>
+            <!-- /.col -->
         </div>
-        <%-- /.content --%>
+        <%--------------------------
+          | Your Page Content Here |
+          --------------------------%>
     </div>
+    <%-- /.content --%>
     <%-- /.content-wrapper --%>
 
     <%--main_footer.jsp--%>

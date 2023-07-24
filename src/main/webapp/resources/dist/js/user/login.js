@@ -26,6 +26,17 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    var userInputId = getCookie("userInputId");
+    var setCookieYN = getCookie("setCookieYN");
+
+    if (setCookieYN == 'Y') {
+        $("#saveIdBox").prop("checked", true);
+    } else {
+        $("#saveIdBox").prop("checked", false);
+    }
+
+    $("#inputId").val(userInputId);
+
     $("#loginButton").click(function () {
 
         var id = $("#inputId").val();
@@ -40,7 +51,6 @@ window.addEventListener("DOMContentLoaded", function () {
             alert("!   패스워드를 입력해주세요");
             return;
         }
-
         $.ajax({
             type: "post",
             url: "../user/userLoginProcess",
@@ -48,11 +58,12 @@ window.addEventListener("DOMContentLoaded", function () {
                 user_id: $("#inputId").val(),
                 user_pw: $("#inputPw").val(),
                 useCookie: $("#userCookie").prop("checked"),
+                saveCookie: $("#saveIdBox").prop("checked")
             },
             dataType: "json",
             success: function (data) {
                 if (data.result == "success") {
-                    alert("로그인에 성공 하였습니다.");
+                    alert("로그인에 성공 하였습니다");
                     location.href = "../main/main";
                 } else if (data.result == "out") {
                     if (confirm("비활성화된 계정입니다. 계정 활성화 페이지로 이동하시겠습니까?") == true) {
@@ -82,3 +93,19 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//쿠키값 가져오기
+function getCookie(cookie_name) {
+    var x, y;
+    var val = document.cookie.split(';');
+
+    for (var i = 0; i < val.length; i++) {
+        x = val[i].substr(0, val[i].indexOf('='));
+        y = val[i].substr(val[i].indexOf('=') + 1);
+        x = x.replace(/^\s+|\s+$/g, ''); // 공백 제거
+
+        if (x == cookie_name) {
+            return unescape(y);
+        }
+    }
+}

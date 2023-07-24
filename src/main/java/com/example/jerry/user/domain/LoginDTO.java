@@ -18,14 +18,17 @@ public class LoginDTO {
     private String user_pw; // 비밀번호
     private boolean useCookie; // 로그인 유지 여부
 
+    private boolean saveCookie; // 아이디 저장 여부
+
     public LoginDTO() {
         super();
     }
 
-    public LoginDTO(String user_id, String user_pw, boolean useCookie) {
+    public LoginDTO(String user_id, String user_pw, boolean useCookie, boolean saveCookie) {
         this.user_id = user_id;
         this.user_pw = user_pw;
         this.useCookie = useCookie;
+        this.saveCookie = saveCookie;
     }
 
     public String getUser_id() {
@@ -52,12 +55,21 @@ public class LoginDTO {
         this.useCookie = useCookie;
     }
 
+    public boolean isSaveCookie() {
+        return saveCookie;
+    }
+
+    public void setSaveCookie(boolean saveCookie) {
+        this.saveCookie = saveCookie;
+    }
+
     @Override
     public String toString() {
         return "LoginDTO{" +
                 "user_id='" + user_id + '\'' +
                 ", user_pw='" + user_pw + '\'' +
-                ", useCookie=" + useCookie +
+                ", useCookie=" + useCookie + '\'' +
+                ", saveCookie= " + saveCookie +
                 '}';
     }
 }
