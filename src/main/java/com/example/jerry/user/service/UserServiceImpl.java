@@ -15,12 +15,14 @@ package com.example.jerry.user.service;
 
 import com.example.jerry.commons.annotation.LogException;
 import com.example.jerry.user.domain.LoginDTO;
+import com.example.jerry.user.domain.QuestionVo;
 import com.example.jerry.user.domain.UserVo;
 import com.example.jerry.user.persistance.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -79,5 +81,29 @@ public class UserServiceImpl implements UserService {
     @LogException
     public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param) {
         return userDAO.getUserIdByNickNameAndEmail(param);
+    }
+
+    // 비밀번호 찾기 질문
+    @Override
+    @LogException
+    public List<QuestionVo> getJoinQuestionList() {
+        return userDAO.getJoinQuestionList();
+    }
+
+    //  비밀번호 찾기 질문 조회
+    @Override
+    @LogException
+    public HashMap<String, Object> getUserQuestionById(UserVo param) {
+        return userDAO.getUserQuestionById(param);
+    }
+
+    //  비밀번호 질문 답변
+    public UserVo getUserPwByfindAnswer(UserVo param) {
+        return userDAO.getUserPwByfindAnswer(param);
+    }
+
+    //  임시 비밀번호 발급
+    public void getUserUpdatePw(UserVo param) {
+        userDAO.getUserUpdatePw(param);
     }
 }

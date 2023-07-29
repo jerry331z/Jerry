@@ -15,9 +15,11 @@ package com.example.jerry.user.service;
 
 
 import com.example.jerry.user.domain.LoginDTO;
+import com.example.jerry.user.domain.QuestionVo;
 import com.example.jerry.user.domain.UserVo;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface UserService {
 
@@ -41,5 +43,17 @@ public interface UserService {
 
     //  아이디 찾기
     public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param);
+
+    //  비밀번호 질문 조회
+    public List<QuestionVo> getJoinQuestionList();
+
+    // 비밀번호 찾기 질문 조회
+    public HashMap<String, Object> getUserQuestionById(UserVo param);
+
+    // 비밀번호 질문 답변
+    public UserVo getUserPwByfindAnswer(UserVo param);
+
+    // 임시비밀번호 발급
+    public void getUserUpdatePw(UserVo param);
 
 }

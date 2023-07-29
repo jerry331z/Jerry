@@ -5,7 +5,7 @@
     <!-- 회원가입 -->
     <insert id="insertUser">
         insert into jerry_user(user_no, user_id, user_pw, user_nickname, user_gender,
-                                   user_birth, user_phone, user_email)
+                               user_birth, user_phone, user_email)
         values (jerry_user_seq.nextval,
                 #{user_id},
                 #{user_pw},
@@ -18,36 +18,83 @@
 
     <!-- 회원가입 아이디 중복체크 -->
     <select id="isExistId" resultType="int">
-        select count(*) from jerry_user where user_id = #{user_id}
+        select count(*)
+        from jerry_user
+        where user_id = #{user_id}
     </select>
 
     <!-- 회원가입 닉네임 중복체크 -->
     <select id="isExistNickName" resultType="int">
-        select count(*) from jerry_user where user_nickname = #{user_nickname}
+        select count(*)
+        from jerry_user
+        where user_nickname = #{user_nickname}
     </select>
 
     <!-- 회원가입 휴대폰번호 중복 체크 -->
     <select id="isExistPhoneNumber" resultType="int">
-        select count(*) from jerry_user where user_phone = #{user_phone}
+        select count(*)
+        from jerry_user
+        where user_phone = #{user_phone}
     </select>
 
     <!-- 회원가입 이메일 중복 체크 -->
     <select id="isExistEmail" resultType="int">
-        select count(*) from jerry_user where user_email = #{user_email}
+        select count(*)
+        from jerry_user
+        where user_email = #{user_email}
     </select>
 
     <!-- 유저 로그인 -->
     <select id="selectByIdAndPw" resultType="UserVo">
-        select * from jerry_user where user_id = #{user_id} and user_pw = #{user_pw}
+        select *
+        from jerry_user
+        where user_id = #{user_id}
+          and user_pw = #{user_pw}
     </select>
 
     <!-- 최종 로그인 시간 -->
     <update id="updateLastConnectionDate">
-        update jerry_user set user_last_connection_date = SYSDATE where user_id = #{user_id}
+        update jerry_user
+        set user_last_connection_date = SYSDATE
+        where user_id = #{user_id}
     </update>
 
     <!-- 아이디 찾기 -->
     <select id="getUserIdByNickNameAndEmail" resultType="map">
-        select * from jerry_user where user_nickname = #{user_nickname} and user_email = #{user_email}
+        select *
+        from jerry_user
+        where user_nickname = #{user_nickname}
+          and user_email = #{user_email}
     </select>
+
+    <!-- 비밀번호 찾기 질문 -->
+    <select id="getJoinQuestionList" resultType="QuestionVo">
+        select *
+        from jerry_find_question
+    </select>
+
+    <!-- 비밀번호 찾기 질문 조회 -->
+    <select id="getUserQuestionById" resultType="map">
+        SELECT nf.question_content
+        FROM jerry_user nu,
+             jerry_find_question nf
+        WHERE nu.question_no = nf.question_no
+          AND nu.user_id = #{user_id}
+    </select>
+
+    <!-- 비밀번호 찾기 질문 답변 -->
+    <select id="getUserPwByfindAnswer" resultType="UserVo">
+        SELECT *
+        FROM jerry_user
+        WHERE user_findAnswer = #{user_findAnswer}
+          AND user_id = #{user_id}
+    </select>
+
+    <!-- 임시 비밀번호 발급 -->
+    <update id="getUserUpdatePw">
+        UPDATE jerry_user
+        SET user_pw = #{user_pw}
+        WHERE user_id = #{user_id}
+    </update>
+
 </mapper>

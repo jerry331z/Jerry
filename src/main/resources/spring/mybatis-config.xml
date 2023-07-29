@@ -6,6 +6,7 @@
 
     <typeAliases>
         <typeAlias type="com.example.jerry.user.domain.UserVo" alias="UserVo" />
+        <typeAlias type="com.example.jerry.user.domain.QuestionVo" alias="QuestionVo" />
     </typeAliases>
 
 </configuration>

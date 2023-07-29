@@ -24,6 +24,7 @@ import java.util.Date;
 public class UserVo {
 
     private int user_no; // 유저 번호
+    private int question_no; // 비밀번호 찾기 질문 번호
     @Pattern(regexp = "^(?=.*[a-zA-z])(?=.*[0-9])(?!.*[^a-zA-z0-9]).{5,10}")
     private String user_id; // 유저 아아디
 
@@ -55,6 +56,10 @@ public class UserVo {
     @Pattern(regexp = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$")
     private String user_email; // 유저 이메일
 
+    @NotNull
+    @Length(min = 1, max = 100)
+    private String user_findAnswer; // 비밀번호찾기 답변
+
     private String user_status; // 유저 상태
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date user_join_date; // 유저 가입 일자
@@ -65,8 +70,9 @@ public class UserVo {
         super();
     }
 
-    public UserVo(int user_no, String user_id, String user_pw, String user_nickname, String user_image, String user_gender, Date user_birth, String user_phone, String user_email, String user_status, Date user_join_date, Date user_last_connection_date) {
+    public UserVo(int user_no, int question_no, String user_id, String user_pw, String user_nickname, String user_image, String user_gender, Date user_birth, String user_phone, String user_email, String user_findAnswer, String user_status, Date user_join_date, Date user_last_connection_date) {
         this.user_no = user_no;
+        this.question_no = question_no;
         this.user_id = user_id;
         this.user_pw = user_pw;
         this.user_nickname = user_nickname;
@@ -75,6 +81,7 @@ public class UserVo {
         this.user_birth = user_birth;
         this.user_phone = user_phone;
         this.user_email = user_email;
+        this.user_findAnswer = user_findAnswer;
         this.user_status = user_status;
         this.user_join_date = user_join_date;
         this.user_last_connection_date = user_last_connection_date;
@@ -86,6 +93,14 @@ public class UserVo {
 
     public void setUser_no(int user_no) {
         this.user_no = user_no;
+    }
+
+    public int getQuestion_no() {
+        return question_no;
+    }
+
+    public void setQuestion_no(int question_no) {
+        this.question_no = question_no;
     }
 
     public String getUser_id() {
@@ -150,6 +165,14 @@ public class UserVo {
 
     public void setUser_email(String user_email) {
         this.user_email = user_email;
+    }
+
+    public String getUser_findAnswer() {
+        return user_findAnswer;
+    }
+
+    public void setUser_findAnswer(String user_findAnswer) {
+        this.user_findAnswer = user_findAnswer;
     }
 
     public String getUser_status() {

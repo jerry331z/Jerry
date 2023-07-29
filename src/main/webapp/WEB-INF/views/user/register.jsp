@@ -193,8 +193,30 @@
                             </div>
 
                             <div class="row mt-1">
-                                <div class="col bi bi-exclamation-square-fill deepblue">
-                                    인증번호 발송은 서버 상황에따라 5초에서 10초정도 시간이 걸릴 수 있습니다.
+                                <div class="col-lg-5">
+                                    <form:select path="question_no" class="form-select" id="userQuestion">
+                                        <c:forEach items="${data}" var="question">
+                                            <form:option value="${question.question_no}">
+                                                ${question.question_content}
+                                            </form:option>
+                                        </c:forEach>
+                                    </form:select>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-5 fs-5"><form:input class="form-control" id="userFindAnswer" path="user_findAnswer"
+                                                                       type="text" placeholder="비밀번호 찾기 정답을 입력해주세요" aria-label="default input example" />
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col my-auto"><form:errors path="user_findAnswer" id="error_message" /></div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-7 bi bi-exclamation-square-fill orange" style="font-size : 10px;">
+                                    비밀번호 찾기 답변은 고객님의 비밀번호 분실시 이용됩니다. 신중하게 기입해주시기 바랍니다.
                                 </div>
                             </div>
 
