@@ -13,6 +13,7 @@
 
 package com.example.jerry.user.controller;
 
+import com.example.jerry.commons.annotation.LogException;
 import com.example.jerry.user.domain.UserVo;
 import com.example.jerry.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class UserController {
     UserService userService;
 
     /* 회원가입 페이지 */
+    @LogException
     @GetMapping(value = "register")
     public String register(@ModelAttribute("userVo") UserVo userVo) {
         return "user/register";
@@ -40,6 +42,7 @@ public class UserController {
 
     /* 회원가입 프로세스 호출 */
     @PostMapping(value = "insertUserProcess")
+    @LogException
     public String insertUserProcess(@Valid UserVo param, BindingResult result) {
 
         if (result.hasErrors()) {
@@ -53,6 +56,7 @@ public class UserController {
 
     /* 로그인 페이지 */
     @GetMapping(value = "login")
+    @LogException
     public String login() {
         return "user/login";
     }

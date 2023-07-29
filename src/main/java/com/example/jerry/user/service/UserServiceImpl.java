@@ -20,6 +20,8 @@ import com.example.jerry.user.persistance.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -38,24 +40,28 @@ public class UserServiceImpl implements UserService {
 
     /* 회원가입 아이디 중복 체크 */
     @Override
+    @LogException
     public int isExistId(String user_id) {
         return userDAO.isExistId(user_id);
     }
 
     /* 회원가입 닉네임 중복체크 */
     @Override
+    @LogException
     public int isExistNickName(String user_nickname) {
         return userDAO.isExistNickName(user_nickname);
     }
 
     /* 회원가입 휴대폰번호 중복체크 */
     @Override
+    @LogException
     public int isExistPhoneNumber(String user_phone) {
         return userDAO.isExistPhoneNumber(user_phone);
     }
 
     /* 회원가입 이메일 중복 체크 */
     @Override
+    @LogException
     public int isExistEmail(String user_email) {
         return userDAO.isExistEmail(user_email);
     }
@@ -66,5 +72,12 @@ public class UserServiceImpl implements UserService {
     public UserVo login(LoginDTO loginDTO) {
         userDAO.updateLastConnectionDate(loginDTO);
         return userDAO.selectByIdAndPw(loginDTO);
+    }
+
+    //  아이디 찾기
+    @Override
+    @LogException
+    public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param) {
+        return userDAO.getUserIdByNickNameAndEmail(param);
     }
 }

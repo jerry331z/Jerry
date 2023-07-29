@@ -45,4 +45,9 @@
     <update id="updateLastConnectionDate">
         update jerry_user set user_last_connection_date = SYSDATE where user_id = #{user_id}
     </update>
+
+    <!-- 아이디 찾기 -->
+    <select id="getUserIdByNickNameAndEmail" resultType="map">
+        select * from jerry_user where user_nickname = #{user_nickname} and user_email = #{user_email}
+    </select>
 </mapper>

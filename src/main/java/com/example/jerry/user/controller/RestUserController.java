@@ -206,4 +206,25 @@ public class RestUserController {
         session.invalidate();
         return data;
     }
+
+    //  유저 아이디 찾기
+    @PostMapping("getUserIdByNickNameAndEmail")
+    @LogException
+    public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param) {
+
+        HashMap<String, Object> data = new HashMap<>();
+
+        HashMap<String, Object> userInfo = userService.getUserIdByNickNameAndEmail(param);
+
+        if (userInfo == null) {
+            data.put("result", "fail");
+        } else {
+            data.put("result", "success");
+            data.put("userInfo", userInfo);
+        }
+
+        System.out.println(data.get("userInfo"));
+
+        return data;
+    }
 }

@@ -16,6 +16,8 @@ package com.example.jerry.user.persistance;
 import com.example.jerry.user.domain.LoginDTO;
 import com.example.jerry.user.domain.UserVo;
 
+import java.util.HashMap;
+
 public interface UserDAO {
 
     /* 회원가입 프로세스 */
@@ -38,4 +40,7 @@ public interface UserDAO {
 
     //  최종 로그인 시간 업데이트
     public void updateLastConnectionDate(LoginDTO loginDTO);
+
+    //  아이디 찾기
+    public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param);
 }

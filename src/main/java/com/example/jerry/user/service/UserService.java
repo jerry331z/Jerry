@@ -17,6 +17,8 @@ package com.example.jerry.user.service;
 import com.example.jerry.user.domain.LoginDTO;
 import com.example.jerry.user.domain.UserVo;
 
+import java.util.HashMap;
+
 public interface UserService {
 
     /* 회원가입 호출 프로세스 */
@@ -36,4 +38,8 @@ public interface UserService {
 
     //  로그인
     public UserVo login(LoginDTO loginDTO);
+
+    //  아이디 찾기
+    public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param);
+
 }

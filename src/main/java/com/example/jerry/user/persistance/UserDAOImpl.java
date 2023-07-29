@@ -20,6 +20,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
+
 @Repository
 public class UserDAOImpl implements UserDAO {
 
@@ -32,6 +34,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
 
+    /* 회원가입 */
     @Override
     @LogException
     public void insertUser(UserVo userVo) {
@@ -40,24 +43,28 @@ public class UserDAOImpl implements UserDAO {
 
     /* 회원가입 아이디 중복 체크 */
     @Override
+    @LogException
     public int isExistId(String user_id) {
         return sqlSession.selectOne(NAMESPACE + ".isExistId", user_id);
     }
 
     /* 회원가입 닉네임 중복 체크 */
     @Override
+    @LogException
     public int isExistNickName(String user_nickname) {
         return sqlSession.selectOne(NAMESPACE + ".isExistNickName", user_nickname);
     }
 
     /* 회원가입 휴대폰번호 중복 체크 */
     @Override
+    @LogException
     public int isExistPhoneNumber(String user_phone) {
         return sqlSession.selectOne(NAMESPACE + ".isExistPhoneNumber", user_phone);
     }
 
     /* 회원가입 이메일 중복 체크 */
     @Override
+    @LogException
     public int isExistEmail(String user_email) {
         return sqlSession.selectOne(NAMESPACE + ".isExistEmail", user_email);
     }
@@ -70,7 +77,16 @@ public class UserDAOImpl implements UserDAO {
     }
 
     //  최종로그인 시간 업데이트
+    @Override
+    @LogException
     public void updateLastConnectionDate(LoginDTO loginDTO) {
         sqlSession.update(NAMESPACE + ".updateLastConnectionDate", loginDTO);
+    }
+
+    //  아이디 찾기
+    @Override
+    @LogException
+    public HashMap<String, Object> getUserIdByNickNameAndEmail(UserVo param) {
+        return sqlSession.selectOne(NAMESPACE + ".getUserIdByNickNameAndEmail", param);
     }
 }

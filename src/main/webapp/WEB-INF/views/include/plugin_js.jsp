@@ -32,3 +32,5 @@
 <script src="/dist/js/user/register.js" type="text/javascript"></script>
 <!-- user login -->
 <script src="/dist/js/user/login.js" type="text/javascript"></script>
+<!-- Find ID Password -->
+<script src="/dist/js/user/findUserInfo.js" type="text/javascript"></script>
