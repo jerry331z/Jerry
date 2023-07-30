@@ -40,4 +40,17 @@
         <beans:property name="defaultEncoding" value="UTF-8"/>
         <beans:property name="cacheSeconds" value="60"/>
     </beans:bean>
+
+    <!-- 로그인 권한 인증 요청 인터셉터 -->
+    <beans:bean id="authentication" class="com.example.jerry.commons.interceptor.AuthenticationInterceptor"/>
+
+    <interceptors>
+        <interceptor>
+            <mapping path="/user/profile"/>
+            <mapping path="/board/*" />
+            <exclude-mapping path="/board/postingList"/>
+            <exclude-mapping path="/board/detailsPosting"/>
+            <beans:ref bean="authentication"/>
+        </interceptor>
+    </interceptors>
 </beans:beans>
