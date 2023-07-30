@@ -44,6 +44,9 @@
     <!-- 로그인 권한 인증 요청 인터셉터 -->
     <beans:bean id="authentication" class="com.example.jerry.commons.interceptor.AuthenticationInterceptor"/>
 
+    <!-- 자동로그인 요청 인터셉터 -->
+    <beans:bean id="autoLoginInterceptor" class="com.example.jerry.commons.interceptor.AutoLoginInterceptor"/>
+
     <interceptors>
         <interceptor>
             <mapping path="/user/profile"/>
@@ -51,6 +54,11 @@
             <exclude-mapping path="/board/postingList"/>
             <exclude-mapping path="/board/detailsPosting"/>
             <beans:ref bean="authentication"/>
+        </interceptor>
+
+        <interceptor>
+            <mapping path="/**/"/>
+            <beans:ref bean="autoLoginInterceptor"/>
         </interceptor>
     </interceptors>
 </beans:beans>

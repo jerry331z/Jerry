@@ -21,8 +21,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -116,5 +118,24 @@ public class UserDAOImpl implements UserDAO {
     @LogException
     public void getUserUpdatePw(UserVo param) {
         sqlSession.update(NAMESPACE + ".getUserUpdatePw", param);
+    }
+
+    // 로그인 유지
+    @Override
+    @LogException
+    public void keepLogin(String user_id, String sessionId, Date next) {
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("user_id", user_id);
+        paramMap.put("sessionId", sessionId);
+        paramMap.put("next", next);
+
+        sqlSession.update(NAMESPACE + ".keepLogin", paramMap);
+    }
+
+    // Session Key 확인
+    @Override
+    @LogException
+    public UserVo checkUserWithSessionKey(String value) {
+        return sqlSession.selectOne(NAMESPACE + ".checkUserWithSessionKey", value);
     }
 }

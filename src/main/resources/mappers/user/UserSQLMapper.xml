@@ -97,4 +97,19 @@
         WHERE user_id = #{user_id}
     </update>
 
+    <!-- 자동 로그인 -->
+    <update id="keepLogin">
+        update jerry_user
+        set sessionkey   = #{sessionId}
+          , sessionlimit = #{next}
+        where user_id = #{user_id}
+    </update>
+
+    <!--Session Key 확인-->
+    <select id="checkUserWithSessionKey" resultType="UserVo">
+        select *
+        from jerry_user
+        where sessionkey = #{value}
+          and sessionlimit > sysdate
+    </select>
 </mapper>

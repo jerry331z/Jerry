@@ -57,5 +57,9 @@ VALUES (jerry_find_question_seq.nextval, '가장 좋아하는 색깔은 무엇 �
 INSERT INTO jerry_find_question(question_no, question_content)
 VALUES (jerry_find_question_seq.nextval, '가장 좋아하는 음식은 무엇 입니까?');
 
-
+-- 자동 로그인 (세션아이디 / 세션리미트)
+alter table jerry_user
+    add sessionkey varchar2(50) default 'none';
+alter table jerry_user
+    add sessionlimit date default sysdate;
 commit;
