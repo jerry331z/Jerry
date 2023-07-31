@@ -67,4 +67,13 @@ public class UserController {
     public String login() {
         return "user/login";
     }
+
+    // 내정보 페이지
+    @GetMapping("profile")
+    public String profile(Model model) {
+
+        model.addAttribute("data", userService.getJoinQuestionList());
+
+        return "user/profile";
+    }
 }
