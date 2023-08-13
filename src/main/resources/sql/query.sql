@@ -4,6 +4,7 @@ drop table jerry_user;
 create table jerry_user
 (
     user_no                   number primary key,
+    question_no               number,
     user_id                   varchar2(100) not null unique,
     user_pw                   varchar2(200) not null,
     user_nickname             varchar2(20)  not null unique,
@@ -12,6 +13,7 @@ create table jerry_user
     user_birth                date          not null,
     user_phone                varchar2(20)  not null unique,
     user_email                varchar2(200) not null unique,
+    user_findAnswer           varchar2(200) not null,
     user_status               varchar2(30)  default 'active',
     user_join_date            date          default sysdate,
     user_last_connection_date date          default sysdate

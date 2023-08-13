@@ -63,4 +63,6 @@ public interface UserService {
     // Session Key 확인
     public UserVo checkLoginBefore(String value);
 
+    //  유저 정보 업데이트
+    public void updateUserInfoDate(UserVo param);
 }

@@ -51,6 +51,7 @@ public class RestUserController {
 
     /* 회원가입 아이디 중복 체크 */
     @PostMapping(value = "isExistId")
+    @LogException
     public HashMap<String, Object> isExistId(String user_id) {
 
         int check = userService.isExistId(user_id);
@@ -65,6 +66,7 @@ public class RestUserController {
 
     /* 회원가입 닉네임 중복 체크 */
     @PostMapping(value = "isExistNickName")
+    @LogException
     public HashMap<String, Object> isExistNickName(String user_nickname) {
 
         int check = userService.isExistNickName(user_nickname);
@@ -80,6 +82,7 @@ public class RestUserController {
 
     /* 회원가입 휴대폰번호 중복 체크 */
     @PostMapping(value = "isExistPhoneNumber")
+    @LogException
     public HashMap<String, Object> isExistPhoneNumber(String user_phone) {
 
         int check = userService.isExistPhoneNumber(user_phone);
@@ -95,6 +98,7 @@ public class RestUserController {
 
     /* 회원가입 이메일 중복 체크 */
     @PostMapping(value = "isExistEmail")
+    @LogException
     public HashMap<String, Object> isExistEmail(String user_email) {
 
         int check = userService.isExistEmail(user_email);
@@ -110,6 +114,7 @@ public class RestUserController {
 
     /* 이메일 유효성 검증 */
     @PostMapping(value = "checkEmail")
+    @LogException
     public HashMap<String, Object> checkEmail(String user_email) {
 
         Random random = new Random();
@@ -301,6 +306,63 @@ public class RestUserController {
         } else {
             data.put("result", "fail");
         }
+        return data;
+    }
+
+    //  회원정보 변경 - 이메일 인증
+    @PostMapping(value = "checkUserInfo")
+    @LogException
+    public HashMap<String, Object> checkUserInfo(String user_email) {
+        Random random = new Random();
+        int checkNum = random.nextInt(888888) + 111111;
+
+        // 메일 제목, 내용
+        String subject = "회원정보 변경 인증 메일입니다.";
+        String content = "저희 사이트를 방문해주셔서 감사합니다." +
+                "인증 번호는 " + checkNum + " 입니다." +
+                "\r\n" +
+                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+
+        // 보내는 사람
+        String from = "hanbyeols333z@gmail.com";
+
+        try {
+            // 메일 내용 넣을 객체와, 이를 도와주는 Helper 객체 생성
+            MimeMessage mail = javaMailSender.createMimeMessage();
+            MimeMessageHelper mailHelper = new MimeMessageHelper(mail, "UTF-8");
+
+            // 메일 내용을 채워줌
+            mailHelper.setFrom(from, "관리자");    // 보내는 사람 셋팅
+            mailHelper.setTo(user_email);        // 받는 사람 셋팅
+            mailHelper.setSubject(subject);    // 제목 셋팅
+            mailHelper.setText(content);    // 내용 셋팅
+
+            // 메일 전송
+            javaMailSender.send(mail);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        data.put("code", checkNum);
+
+        return data;
+    }
+
+    //  회원정보 변경 - 변경 완료
+    @PostMapping(value = "updateInfoUser")
+    @LogException
+    public HashMap<String, Object> updateInfoUser(UserVo param, HttpSession session) {
+
+       UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
+       if (sessionUser != null) {
+           data.put("result", "success");
+           userService.updateUserInfoDate(param);
+           session.removeAttribute("sessionUser");
+       } else {
+           data.put("result", "fail");
+       }
+
         return data;
     }
 }

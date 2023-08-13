@@ -34,3 +34,5 @@
 <script src="/dist/js/user/login.js" type="text/javascript"></script>
 <!-- Find ID Password -->
 <script src="/dist/js/user/findUserInfo.js" type="text/javascript"></script>
+<!-- profile page -->
+<script src="/dist/js/user/profile.js" type="text/javascript"></script>

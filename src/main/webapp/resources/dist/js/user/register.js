@@ -116,19 +116,19 @@ window.addEventListener("DOMContentLoaded", function () {
         if (value.length < 1 || value.length > 10) {
             $("#alertNickname").css({
                 "color": "red",
-                "font-size": "13px"
+                "font-size": "10px"
             });
             $("#alertNickName").text("!  닉네임은 1자리이상 10자리 이하여야 합니다.")
         } else if (value.replace(/\s|　/gi, "").length == 0) {
             $("#alertNickname").css({
                 "color": "red",
-                "font-size": "13px"
+                "font-size": "10px"
             });
             $("#alertNickname").text("!  닉네임에 공백은 사용 할 수 없습니다.")
         } else if (txt < 0) {
             $("#alertNickname").css({
                 "color": "red",
-                "font-size": "13px"
+                "font-size": "10px"
             });
             $("#alertNickname").text("!  닉네임은 한글만 입력 가능합니다.")
         } else {
@@ -143,13 +143,13 @@ window.addEventListener("DOMContentLoaded", function () {
                     if (data.result == "fail") {
                         $("#alertNickName").css({
                             "color": "red",
-                            "font-size": "13px"
+                            "font-size": "10px"
                         });
                         $("#alertNickName").text("!  이미 사용중인 닉네임 입니다.")
                     } else {
                         $("#alertNickName").css({
                             "color": "black",
-                            "font-size": "13px"
+                            "font-size": "10px"
                         });
                         $("#alertNickName").text("✔  사용 가능한 닉네임입니다.")
                     }
@@ -231,6 +231,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         });
                         $("#alertEmail").text("✔  사용 가능한 이메일주소입니다.");
                         $("#emailCheck").attr("disabled", false);
+                        $("#CertifiedEmailButton").attr("disabled", false);
                     }
                 }
             });

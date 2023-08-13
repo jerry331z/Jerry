@@ -138,4 +138,11 @@ public class UserDAOImpl implements UserDAO {
     public UserVo checkUserWithSessionKey(String value) {
         return sqlSession.selectOne(NAMESPACE + ".checkUserWithSessionKey", value);
     }
+
+    //  유저정보 업데이트
+    @Override
+    @LogException
+    public void updateUserInfoDate(UserVo param) {
+        sqlSession.update(NAMESPACE + ".updateUserInfoDate", param);
+    }
 }

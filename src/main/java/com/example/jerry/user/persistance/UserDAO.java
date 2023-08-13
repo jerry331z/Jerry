@@ -64,4 +64,7 @@ public interface UserDAO {
 
     // Session Key 확인
     public UserVo checkUserWithSessionKey(String value);
+
+    //  유저정보 업데이트
+    public void updateUserInfoDate(UserVo param);
 }

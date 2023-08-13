@@ -4,16 +4,18 @@
 <mapper namespace="mappers.user.UserSQLMapper">
     <!-- 회원가입 -->
     <insert id="insertUser">
-        insert into jerry_user(user_no, user_id, user_pw, user_nickname, user_gender,
+        insert into jerry_user(user_no, question_no, user_id, user_pw, user_nickname, user_gender,
                                user_birth, user_phone, user_email)
         values (jerry_user_seq.nextval,
                 #{user_id},
+                #{question_no},
                 #{user_pw},
                 #{user_nickname},
                 #{user_gender},
                 #{user_birth},
                 #{user_phone},
-                #{user_email})
+                #{user_email},
+                #{user_findAnswer})
     </insert>
 
     <!-- 회원가입 아이디 중복체크 -->
@@ -112,4 +114,15 @@
         where sessionkey = #{value}
           and sessionlimit > sysdate
     </select>
+
+    <!-- 유저정보 업데이트 -->
+    <update id="updateUserInfoDate">
+        update jerry_user
+        SET question_no     = #{question_no},
+            user_nickname   = #{user_nickname},
+            user_phone      = #{user_phone},
+            user_email      = #{user_email},
+            user_findAnswer = #{user_findAnswer}
+        where user_id = #{user_id}
+    </update>
 </mapper>
