@@ -128,4 +128,11 @@ public class UserServiceImpl implements UserService {
     public void updateUserInfoDate(UserVo param) {
         userDAO.updateUserInfoDate(param);
     }
+
+    //  유저정보 조회
+    @Override
+    @LogException
+    public UserVo getUser(String user_id) {
+        return userDAO.getUser(user_id);
+    }
 }

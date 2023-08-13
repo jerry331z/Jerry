@@ -145,4 +145,11 @@ public class UserDAOImpl implements UserDAO {
     public void updateUserInfoDate(UserVo param) {
         sqlSession.update(NAMESPACE + ".updateUserInfoDate", param);
     }
+
+    //  유저정보 조회
+    @Override
+    @LogException
+    public UserVo getUser(String user_id) {
+        return sqlSession.selectOne(NAMESPACE + ".getUser", user_id);
+    }
 }

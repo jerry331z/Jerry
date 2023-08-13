@@ -67,4 +67,7 @@ public interface UserDAO {
 
     //  유저정보 업데이트
     public void updateUserInfoDate(UserVo param);
+
+    //  유저정보 확인
+    public UserVo getUser(String user_id);
 }

@@ -125,4 +125,8 @@
             user_findAnswer = #{user_findAnswer}
         where user_id = #{user_id}
     </update>
+
+    <select id="getUser" resultType="UserVo">
+        select * from jerry_user where user_id = #{user_id}
+    </select>
 </mapper>

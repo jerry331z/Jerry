@@ -354,14 +354,55 @@ public class RestUserController {
     @LogException
     public HashMap<String, Object> updateInfoUser(UserVo param, HttpSession session) {
 
-       UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
-       if (sessionUser != null) {
-           data.put("result", "success");
-           userService.updateUserInfoDate(param);
-           session.removeAttribute("sessionUser");
-       } else {
-           data.put("result", "fail");
-       }
+        UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
+        if (sessionUser != null) {
+            data.put("result", "success");
+            userService.updateUserInfoDate(param);
+            session.removeAttribute("sessionUser");
+        } else {
+            data.put("result", "fail");
+        }
+
+        return data;
+    }
+
+    // 현재 비밀번호 체크
+    @PostMapping("checkPw")
+    @LogException
+    public HashMap<String, Object> checkPw(String current_password, String user_id) {
+
+        HashMap<String, Object> data = new HashMap<>();
+
+        UserVo userVo = userService.getUser(user_id);
+
+        if (userVo != null) {
+            data.put("result", "success");
+        } else {
+            data.put("result", "fail");
+        }
+
+        return data;
+    }
+
+    //  비밀번호 수정
+    @PostMapping(value = "modifyPassword")
+    @LogException
+    public HashMap<String, Object> modifyPassword(UserVo userVo, HttpSession session) {
+
+        HashMap<String, Object> data = new HashMap<>();
+
+        UserVo sessionUser = userService.getUser(userVo.getUser_id());
+
+        if (sessionUser != null) {
+            data.put("result", "success");
+            /* 비밀번호 변경 */
+            userService.getUserUpdatePw(sessionUser);
+
+            /* 비밀번호 변경후 로그아웃 */
+            session.invalidate();
+        } else {
+            data.put("result", "fail");
+        }
 
         return data;
     }

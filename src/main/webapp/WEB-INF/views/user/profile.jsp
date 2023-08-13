@@ -232,3 +232,103 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="userPwModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">비밀번호 변경</h4>
+            </div>
+            <div class="modal-body" data-rno>
+
+                <div class="row mt-2">
+                    <div class="col-xs-2">
+                        <label for="inputUserId">아이디</label>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-5"><input type="text" class="form-control" id="uid"
+                                                 value="${sessionUser.user_id}" readonly>
+                    </div>
+                    <div class="col my-auto" style="color:#6667ab; font-size:10px;">아이디는 한 번 정하면 변경 하실수없습니다.</div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-3">
+                        <label for="currentPassword">현재 비밀번호</label>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-8">
+                        <input type="password" id="currentPassword" class="form-control"
+                               placeholder="현재 사용중인 패스워드를 입력해주세요">
+                    </div>
+
+                    <div class="col-xs-4">
+                        <button type="button" class="but btn-info pwModBtn" id="checkPassword">체크하기</button>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-xs-12">
+                        <div id="currentMessage" style="font-size:10px;color:#6667ab;"></div>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-6">
+                        <label for="newPassword">새로운 비밀번호 :</label>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-8">
+                        <input type="password" class="form-control" placeholder="새로운 패스워드를 입력해주세요"
+                               id="newPassword" disabled="disabled">
+                    </div>
+
+                    <div class="col-xs-4">
+                        <button type="button" class="but btn-info pwModBtn" id="newPasswordCheck">비밀번호 체크하기</button>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-12" id="alertNewPassword"></div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col">
+                        <label for="checkingNewPassword">비밀번호 확인 : </label>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-8">
+                        <input type="password" class="form-control"
+                               placeholder="새로운 패스워드를 한번 더 입력해주세요" id="checkingNewPassword"
+                               disabled="disabled">
+                    </div>
+
+                    <div class="col-xs-4">
+                        <button type="button" class="but btn-info pwModBtn" id="newPasswordCheck2">비밀번호 체크하기</button>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-7" id="alertCheckingPassword"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-primary pull-right pwModBtn" id="modifyPw" disabled="disabled">
+                저장
+            </button>
+        </div>
+    </div>
+</div>

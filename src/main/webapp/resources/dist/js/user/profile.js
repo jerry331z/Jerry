@@ -88,4 +88,109 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    $("#checkPassword").click(function () {
+        $.ajax({
+            type: "post",
+            url: "../user/checkPw",
+            data: {
+                user_id: $("#uid").val(),
+                current_password: $("#currentPassword").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.result == 'fail') {
+                    $("#currentMessage").css({
+                        "color": "#6667ab",
+                        "font-size": "10px"
+                    });
+                    $("#currentMessage").text("!  현재 비밀번호와 일치 하지 않습니다. 다시 확인해주세요");
+                } else {
+                    $("#currentMessage").css({
+                        "color": "#6667ab",
+                        "font-size": "10px"
+                    });
+                    $("#currentMessage").text("✔  현재 비밀번호와 일치 합니다.");
+                    $("#currentPassword").attr("disabled", true);
+                    $("#newPassword").attr("disabled", false);
+                }
+            }
+        });
+    });
+
+    $("#newPasswordCheck").click(function () {
+        var value = $("#newPassword").val();
+
+        var num = value.search(/[0-9]/g);
+        var eng = value.search(/[a-z]/ig);
+        var spe = value.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+        if (value.length < 8 || value.length > 30) {
+            $("#alertNewPassword").css({
+                "color": "6667ab",
+                "font-size": "10px"
+            });
+            $("#alterPassword").text("!  비밀번호는 8자리이상 30자리 이하여야 합니다.")
+        } else if (value.replace(/\s|　/gi, "").length == 0) {
+            $("#alertNewPassword").css({
+                "color": "6667ab",
+                "font-size": "10px"
+            });
+            $("#alertNewPassword").text("!  비밀번호에 공백은 사용할 수 없습니다.")
+        } else if (num < 0 || eng < 0 || spe < 0) {
+            $("#alertNewPassword").css({
+                "color": "6667ab",
+                "font-size": "10px"
+            });
+            $("#alertNewPassword").text("!  비밀번호는 영어+숫자+특수문자로 이루어져야 합니다.")
+        } else {
+            $("#alertNewPassword").css({
+                "color": "6667ab",
+                "font-size": "10px"
+            });
+            $("#alertNewPassword").text("✔  사용가능한 비밀번호입니다.");
+            $("#checkingNewPassword").attr("disabled", false);
+        }
+    });
+
+    $("#newPasswordCheck2").click(function() {
+        var value = $("#newPassword").val();
+        if (value != $("#checkingNewPassword").val()) {
+            $("#alertCheckingPassword").css({
+                "color": "red",
+                "font-size": "12px"
+            });
+            $("#alertCheckingPassword").text("!  비밀번호가 일치하지 않습니다.")
+            return;
+        }
+        ;
+        $("#alertCheckingPassword").css({
+            "color": "green",
+            "font-size": "10px"
+        });
+        $("#alertCheckingPassword").text("✔  비밀번호가 일치합니다.");
+        $("#newPassword").attr("disabled", true);
+        $("#modifyPw").attr("disabled", false);
+    });
+
+
+    $("#modifyPw").click(function () {
+        $.ajax({
+            type: "post",
+            url: "../user/modifyPassword",
+            data: {
+                user_id: $("#uid").val(),
+                user_pw: $("#checkingNewPassword").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.result == 'fail') {
+                    alert("비밀번호 변경에 실패 하였습니다. 다시 확인해주세요");
+                } else {
+                    alert("비밀번호 변경에 성공하였습니다");
+                    location.reload();
+                }
+            }
+        });
+    });
 });
