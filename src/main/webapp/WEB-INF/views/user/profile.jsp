@@ -251,7 +251,7 @@
                 </div>
 
                 <div class="row mt-1">
-                    <div class="col-xs-5"><input type="text" class="form-control" id="uid"
+                    <div class="col-xs-5"><input type="text" class="form-control" id="inputId"
                                                  value="${sessionUser.user_id}" readonly>
                     </div>
                     <div class="col my-auto" style="color:#6667ab; font-size:10px;">아이디는 한 번 정하면 변경 하실수없습니다.</div>

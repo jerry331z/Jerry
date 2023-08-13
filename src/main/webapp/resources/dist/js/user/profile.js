@@ -92,9 +92,9 @@ window.addEventListener("DOMContentLoaded", function () {
     $("#checkPassword").click(function () {
         $.ajax({
             type: "post",
-            url: "../user/checkPw",
+            url: "./checkPw",
             data: {
-                user_id: $("#uid").val(),
+                user_id: $("#inputId").val(),
                 current_password: $("#currentPassword").val()
             },
             dataType: "json",
@@ -170,6 +170,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
         $("#alertCheckingPassword").text("✔  비밀번호가 일치합니다.");
         $("#newPassword").attr("disabled", true);
+        $("#checkingNewPassword").attr("disabled", true);
         $("#modifyPw").attr("disabled", false);
     });
 
@@ -177,9 +178,9 @@ window.addEventListener("DOMContentLoaded", function () {
     $("#modifyPw").click(function () {
         $.ajax({
             type: "post",
-            url: "../user/modifyPassword",
+            url: "./modifyPassword",
             data: {
-                user_id: $("#uid").val(),
+                user_id: $("#inputId").val(),
                 user_pw: $("#checkingNewPassword").val()
             },
             dataType: "json",

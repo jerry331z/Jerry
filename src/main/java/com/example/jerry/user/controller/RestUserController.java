@@ -396,7 +396,7 @@ public class RestUserController {
         if (sessionUser != null) {
             data.put("result", "success");
             /* 비밀번호 변경 */
-            userService.getUserUpdatePw(sessionUser);
+            userService.modifyPassword(userVo.getUser_id(), userVo.getUser_pw());
 
             /* 비밀번호 변경후 로그아웃 */
             session.invalidate();

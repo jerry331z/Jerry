@@ -152,4 +152,15 @@ public class UserDAOImpl implements UserDAO {
     public UserVo getUser(String user_id) {
         return sqlSession.selectOne(NAMESPACE + ".getUser", user_id);
     }
+
+    //  비밀번호 변경
+    @Override
+    @LogException
+    public void modifyPassword(String user_id, String user_pw) {
+        Map<String, Object> keyValue = new HashMap<>();
+        keyValue.put("user_id", user_id);
+        keyValue.put("user_pw", user_pw);
+
+        sqlSession.update(NAMESPACE + ".modifyPassword", keyValue);
+    }
 }

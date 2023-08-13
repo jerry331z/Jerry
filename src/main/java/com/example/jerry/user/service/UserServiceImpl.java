@@ -135,4 +135,11 @@ public class UserServiceImpl implements UserService {
     public UserVo getUser(String user_id) {
         return userDAO.getUser(user_id);
     }
+
+    //  비밀번호 변경
+    @Override
+    @LogException
+    public void modifyPassword(String user_id, String user_pw) {
+        userDAO.modifyPassword(user_id, user_pw);
+    }
 }

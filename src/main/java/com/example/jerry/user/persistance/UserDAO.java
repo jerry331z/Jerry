@@ -70,4 +70,7 @@ public interface UserDAO {
 
     //  유저정보 확인
     public UserVo getUser(String user_id);
+
+    //  비밀번호 변경
+    public void modifyPassword(String user_id, String user_pw);
 }

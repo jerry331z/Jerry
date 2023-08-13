@@ -126,7 +126,17 @@
         where user_id = #{user_id}
     </update>
 
+    <!-- 회원정보 조회 -->
     <select id="getUser" resultType="UserVo">
-        select * from jerry_user where user_id = #{user_id}
+        select *
+        from jerry_user
+        WHERE user_id = #{user_id}
     </select>
+
+    <!-- 비밀번호 변경  -->
+    <update id="modifyPassword">
+        UPDATE jerry_user
+        SET user_pw = #{user_pw}
+        WHERE user_id = #{user_id}
+    </update>
 </mapper>
