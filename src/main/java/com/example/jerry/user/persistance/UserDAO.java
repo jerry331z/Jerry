@@ -73,4 +73,7 @@ public interface UserDAO {
 
     //  비밀번호 변경
     public void modifyPassword(String user_id, String user_pw);
+
+    //  회원정보 탈퇴
+    public void deleteUserInfoByUserNo(UserVo param);
 }

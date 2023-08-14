@@ -406,4 +406,20 @@ public class RestUserController {
 
         return data;
     }
+
+    //  회원탈퇴
+    @PostMapping(value = "deleteUserInfoByUserNo")
+    public HashMap<String, Object> deleteUserInfoByUserNo(UserVo vo, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+
+        UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
+        if (sessionUser == null) {
+            data.put("result", "fail");
+        } else {
+            data.put("result", "success");
+            userService.deleteUserInfoByUserNo(sessionUser);
+            session.invalidate();
+        }
+        return data;
+    }
+
 }

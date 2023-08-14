@@ -194,4 +194,53 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    $("#checkPassword2").click(function() {
+        $.ajax({
+            type: "post",
+            url: "./checkPw",
+            data: {
+                user_id: $("#inputDeleteId").val(),
+                current_password: $("#currentPassword2").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.result == 'fail') {
+                    $("#currentMessage2").css({
+                        "color": "#6667ab",
+                        "font-size": "10px"
+                    });
+                    $("#currentMessage2").text("!  현재 비밀번호와 일치 하지 않습니다. 다시 확인해주세요");
+                } else {
+                    $("#currentMessage2").css({
+                        "color": "#6667ab",
+                        "font-size": "10px"
+                    });
+                    $("#currentMessage2").text("✔  현재 비밀번호와 일치 합니다.");
+                    $("#currentPassword2").attr("disabled", true);
+                    $("#deleteUser").attr("disabled", false);
+                }
+            }
+        });
+    });
+
+    $("#deleteUser").click(function () {
+        $.ajax({
+            type: "post",
+            url: "../user/deleteUserInfoByUserNo",
+            data: {
+                user_id: $("#inputDeleteId").val(),
+                user_pw: $("#currentPassword2").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.result == 'fail') {
+                    alert("로그인을 하신후에 회원 탈퇴를 진행해주세요");
+                } else {
+                    alert("회원탈퇴에 성공 하였습니다.");
+                    location.reload();
+                }
+            }
+        });
+    });
 });

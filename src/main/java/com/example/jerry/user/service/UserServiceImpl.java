@@ -142,4 +142,11 @@ public class UserServiceImpl implements UserService {
     public void modifyPassword(String user_id, String user_pw) {
         userDAO.modifyPassword(user_id, user_pw);
     }
+
+    //  회원정보 탈퇴
+    @Override
+    @LogException
+    public void deleteUserInfoByUserNo(UserVo param) {
+        userDAO.deleteUserInfoByUserNo(param);
+    }
 }

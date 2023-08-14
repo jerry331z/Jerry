@@ -332,3 +332,56 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="userOutModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">회원을 탈퇴하시겠습니까?</h4>
+            </div>
+            <div class="modal-body" data-rno>
+
+                <div class="row mt-2">
+                    <div class="col-xs-2">
+                        <label for="inputUserId">아이디</label>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-5"><input type="text" class="form-control" id="inputDeleteId"
+                                                 value="${sessionUser.user_id}" readonly>
+                    </div>
+                    <div class="col my-auto" style="color:#6667ab; font-size:10px;">아이디는 한 번 정하면 변경 하실수없습니다.</div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="xs-6">
+                        <label for="currentPassword2">현재 비밀번호</label>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-8">
+                        <input type="password" class="form-control"
+                               placeholder="현재 사용중인 패스워드를 입력해주세요" id="currentPassword2">
+                    </div>
+
+                    <div class="col-xs-4">
+                        <button type="button" class="but btn-info pwModBtn" id="checkPassword2">체크하기</button>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-6" id="currentMessage2" style="font-size:10px;color:#6667ab;"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary myInfoModModalBtn" id="deleteUser" disabled="disabled">탈퇴
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
