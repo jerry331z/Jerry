@@ -36,3 +36,5 @@
 <script src="/dist/js/user/findUserInfo.js" type="text/javascript"></script>
 <!-- profile page -->
 <script src="/dist/js/user/profile.js" type="text/javascript"></script>
+<!-- Recovery Page -->
+<script src="/dist/js/user/userRecovery.js" type="text/javascript"></script>

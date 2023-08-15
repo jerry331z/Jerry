@@ -70,10 +70,17 @@ public class UserController {
 
     // 내정보 페이지
     @GetMapping("profile")
+    @LogException
     public String profile(Model model) {
 
         model.addAttribute("data", userService.getJoinQuestionList());
 
         return "user/profile";
+    }
+
+    @GetMapping(value = "userRecoveryPage")
+    @LogException
+    public String userRecoveryPage() {
+        return "user/userRecoveryPage";
     }
 }
