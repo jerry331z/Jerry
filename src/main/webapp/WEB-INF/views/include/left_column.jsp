@@ -68,7 +68,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-
+                    <li><a href="../board/list"> <i class="fa-thin fa-user-magnifying-glass"></i><span>전채글보기</span></a></li>
                 </ul>
             </li>
         </ul>

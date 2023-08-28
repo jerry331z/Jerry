@@ -180,4 +180,9 @@
           and user_nickname = #{user_nickname}
           and user_email = #{user_email}
     </update>
+
+    <!-- 게시글 작성자 정보 -->
+    <select id="getUserByNo" resultType="UserVo">
+        select * from jerry_user where user_no = #{user_no}
+    </select>
 </mapper>

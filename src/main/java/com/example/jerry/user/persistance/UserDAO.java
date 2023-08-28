@@ -91,4 +91,7 @@ public interface UserDAO {
 
     //  계정 활성화
     public void recoveryUserByInfo(UserVo param);
+
+    //  게시글 작성자 정보
+    public UserVo getUserByNo(int user_no);
 }

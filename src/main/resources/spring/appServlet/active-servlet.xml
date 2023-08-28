@@ -51,8 +51,7 @@
         <interceptor>
             <mapping path="/user/profile"/>
             <mapping path="/board/*" />
-            <exclude-mapping path="/board/postingList"/>
-            <exclude-mapping path="/board/detailsPosting"/>
+            <exclude-mapping path="/board/list"/>
             <beans:ref bean="authentication"/>
         </interceptor>
 

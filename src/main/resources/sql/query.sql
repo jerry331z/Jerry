@@ -1,5 +1,4 @@
 /* 회원가입 테이블 */
-
 drop table jerry_user;
 create table jerry_user
 (
@@ -65,3 +64,25 @@ alter table jerry_user
 alter table jerry_user
     add sessionlimit date default sysdate;
 commit;
+
+-- 게시판 테이블
+drop table jerry_board;
+create table jerry_board
+(
+    board_no         number primary key,
+    user_no          number        not null,
+    board_title      varchar(2000) default '제목',
+    board_content    varchar(4000) default '내용',
+    board_view_count  number        default 0,
+    board_write_date timestamp     default sysdate,
+    constraint board_userNo foreign key (user_no) references jerry_user (user_no)
+);
+
+-- 게시판 테이블 시퀸스
+drop sequence jerry_board_seq;
+create sequence jerry_board_seq;
+
+insert into jerry_board(board_no, user_no, board_title, board_content, board_view_count, board_write_date)
+values (jerry_board_seq.nextval, 1, '제목', '내용', 0, sysdate);
+
+select * from jerry_board;
