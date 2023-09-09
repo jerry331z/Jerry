@@ -1,0 +1,99 @@
+
+u
+java:S2293­"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ıÿÿÿÿ
+u
+java:S2293¾"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ıÿÿÿÿ
+u
+java:S2293Ï"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ıÿÿÿÿ
+u
+java:S2293õ"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ıÿÿÿÿ
+e
+java:S1192„"IDefine a constant instead of duplicating this literal "userInfo" 3 times.(ÒÑó‹øÿÿÿÿ
+b
+java:S1192ˆ"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(úÿ‘€üÿÿÿÿ
+b
+java:S1192~"LDefine a constant instead of duplicating this literal " ì…ë‹ˆë‹¤." 3 times.(ê‚¤¼
+c
+java:S1192¨"LDefine a constant instead of duplicating this literal "sessionUser" 6 times.(ş™ßÃ
+n
+java:S1192ƒ"XDefine a constant instead of duplicating this literal "hanbyeols333z@gmail.com" 3 times.(¦Àÿ4
+c
+java:S1192;"HDefine a constant instead of duplicating this literal "result" 33 times.(Ü¾Ñıÿÿÿÿ
+¦
+java:S1192€"‰Define a constant instead of duplicating this literal "í•´ë‹¹ ì¸ì¦ë²ˆí˜¸ë¥¼ ì¸ì¦ë²ˆí˜¸ í™•ì¸ë€ì— ê¸°ì…í•˜ì—¬ ì£¼ì„¸ìš”." 3 times.(Œ¢®œûÿÿÿÿ
+_
+java:S1192="IDefine a constant instead of duplicating this literal "success" 16 times.(ôÏÑ
+h
+java:S1192~"RDefine a constant instead of duplicating this literal "ì¸ì¦ ë²ˆí˜¸ëŠ” " 3 times.(ê‚¤¼
+ƒ
+java:S13197"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ÚôÀ€
+ˆ
+java:S1319F"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ÄËŸûÿÿÿÿ
+ˆ
+java:S1319V"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(…®ƒûÿÿÿÿ
+ƒ
+java:S1319f"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ûøİ±
+ˆ
+java:S1319v"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ã®Äıÿÿÿÿ
+‰
+java:S1319Ÿ"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(óá€ñüÿÿÿÿ
+„
+java:S1319å"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ÿÿäó
+‰
+java:S1319ü"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ş—ˆûÿÿÿÿ
+„
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ŒşÎ
+‰
+java:S1319Ÿ"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ªŒÇşÿÿÿÿ
+„
+java:S1319­"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(÷Üï­
+‰
+java:S1319»"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ŠßŒıùÿÿÿÿ
+„
+java:S1319ã"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Öñ—¨
+„
+java:S1319ô"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¥¡–ø
+„
+java:S1319†"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ÊÀÅÂ
+‰
+java:S1319œ"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(‚Æ›ºıÿÿÿÿ
+‰
+java:S1319¬"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(‰¡¤şÿÿÿÿ
+ƒ
+java:S1319¼"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(®ÁV
+ƒ
+java:S1319Í"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ÚÄf
+‰
+java:S1319ó"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ğ®›±øÿÿÿÿ
+f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚôÀ€
+k	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄËŸûÿÿÿÿ
+k	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…®ƒûÿÿÿÿ
+f	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûøİ±
+k	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã®Äıÿÿÿÿ
+l	java:S117»"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠßŒıùÿÿÿÿ
+g	java:S117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¡–ø
+g	java:S117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¡–ø
+l	java:S117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¡¤şÿÿÿÿ
+3
+java:S2119x"Save and re-use this "Random".(¼İÅf
+n
+java:S3776Ÿ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(óá€ñüÿÿÿÿ
+S
+java:S2441¨"<Make "UserVo" serializable or don't store it in the session.(ş™ßÃ
+T	java:S106‡"9Replace this use of System.out or System.err by a logger.(ÆÀ¡—øÿÿÿÿ
+4
+java:S2119¼"Save and re-use this "Random".(¼İÅf
+O
+java:S1117ö"8Rename "data" which hides the field declared at line 41.(¤Ü³‰
+O
+java:S1117ˆ"8Rename "data" which hides the field declared at line 41.(¤Ü³‰
+T
+java:S1117­"8Rename "data" which hides the field declared at line 41.(š´å±ıÿÿÿÿ
+T
+java:S1117¾"8Rename "data" which hides the field declared at line 41.(š´å±ıÿÿÿÿ
+T
+java:S1117Ï"8Rename "data" which hides the field declared at line 41.(š´å±ıÿÿÿÿ
+4
+java:S2119Õ"Save and re-use this "Random".(¼İÅf
+T
+java:S1117õ"8Rename "data" which hides the field declared at line 41.(š´å±ıÿÿÿÿ

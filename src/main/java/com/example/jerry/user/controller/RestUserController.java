@@ -498,9 +498,6 @@ public class RestUserController {
     @LogException
     public HashMap<String, Object> recoveryUserByInfo (UserVo vo){
 
-        HashMap<String, Object> data = new HashMap<String, Object>();
-
-
         int checkUser = userService.checkUser(vo);
 
         if ( checkUser == 1 ) {
