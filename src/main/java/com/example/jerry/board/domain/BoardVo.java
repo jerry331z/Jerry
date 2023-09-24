@@ -23,7 +23,7 @@ public class BoardVo {
 
     private int board_no; // 게시글 번호
     private int user_no; //  유저 넘버
-
+    private int category_no; //  카테고리 번호
     @NotNull
     @Length(min = 1, max = 2000)
     private String board_title; //  게시글 제목
@@ -41,9 +41,10 @@ public class BoardVo {
         super();
     }
 
-    public BoardVo(int board_no, int user_no, String board_title, String board_content, int board_view_count, Date board_write_date) {
+    public BoardVo(int board_no, int user_no, int category_no, String board_title, String board_content, int board_view_count, Date board_write_date) {
         this.board_no = board_no;
         this.user_no = user_no;
+        this.category_no = category_no;
         this.board_title = board_title;
         this.board_content = board_content;
         this.board_view_count = board_view_count;
@@ -64,6 +65,14 @@ public class BoardVo {
 
     public void setUser_no(int user_no) {
         this.user_no = user_no;
+    }
+
+    public int getCategory_no() {
+        return category_no;
+    }
+
+    public void setCategory_no(int category_no) {
+        this.category_no = category_no;
     }
 
     public String getBoard_title() {

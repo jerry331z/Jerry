@@ -14,6 +14,7 @@
 package com.example.jerry.board.service;
 
 import com.example.jerry.board.domain.BoardVo;
+import com.example.jerry.board.domain.CategoryVo;
 import com.example.jerry.board.persistance.BoardDAO;
 import com.example.jerry.commons.annotation.LogException;
 import com.example.jerry.user.domain.UserVo;
@@ -41,22 +42,35 @@ public class BoardServiceImpl implements BoardService {
     @Override
     @LogException
     //  게시글 리스트
-    public ArrayList<HashMap<String, Object>> getBoardList() {
+    public ArrayList<HashMap<String, Object>> getBoardList(int category_no) {
 
         ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
 
-        List<BoardVo> boardVoList = boardDAO.getBoardList();
-
+        List<BoardVo> boardVoList;
+        if (category_no != 0) {
+            boardVoList = boardDAO.getBoardByCategoryList(category_no);
+        } else {
+            boardVoList = boardDAO.getBoardList();
+        }
         for (BoardVo boardVo : boardVoList) {
             int userNo = boardVo.getUser_no();
             UserVo userVo = userDAO.getUserByNo(userNo);
+            CategoryVo categoryVo = boardDAO.getCategoryByNo(boardVo.getCategory_no());
 
             HashMap<String, Object> map = new HashMap<String, Object>();
             map.put("boardVo", boardVo);
             map.put("userVo", userVo);
+            map.put("categoryVo", categoryVo);
 
             data.add(map);
         }
         return data;
+    }
+
+    //  게시글 카테고리 목록
+    @Override
+    @LogException
+    public List<CategoryVo> getCategoryList() {
+        return boardDAO.getCategoryList();
     }
 }

@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,9 +36,10 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String lustPage(Model model) {
+    public String lustPage(@RequestParam(value = "category_no", defaultValue = "0") int category_no, Model model) {
 
-        ArrayList<HashMap<String,Object>> dataList = boardService.getBoardList();
+        ArrayList<HashMap<String, Object>> dataList = boardService.getBoardList(category_no);
+        model.addAttribute("category_no", category_no);
         model.addAttribute("dataList", dataList);
 
         return "board/list";

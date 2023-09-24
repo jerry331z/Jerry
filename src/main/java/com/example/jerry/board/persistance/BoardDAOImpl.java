@@ -14,6 +14,7 @@
 package com.example.jerry.board.persistance;
 
 import com.example.jerry.board.domain.BoardVo;
+import com.example.jerry.board.domain.CategoryVo;
 import com.example.jerry.commons.annotation.LogException;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,26 @@ public class BoardDAOImpl implements BoardDAO  {
     public List<BoardVo> getBoardList() {
 
         return sqlSession.selectList(NAMESPACE + ".getBoardList");
+    }
+
+    //  게시글 목록 (카테고리별 정렬)
+    @Override
+    @LogException
+    public List<BoardVo> getBoardByCategoryList(int category_no) {
+        return sqlSession.selectList(NAMESPACE + ".getBoardByCategoryList", category_no);
+    }
+
+    //  카테고리리 정보
+    @Override
+    @LogException
+    public CategoryVo getCategoryByNo(int category_no) {
+        return sqlSession.selectOne(NAMESPACE + ".getCategoryByNo", category_no);
+    }
+
+    //  카테고리 목록
+    @Override
+    @LogException
+    public List<CategoryVo> getCategoryList() {
+        return sqlSession.selectList(NAMESPACE + ".getCategoryList");
     }
 }

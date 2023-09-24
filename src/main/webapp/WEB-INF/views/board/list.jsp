@@ -1,6 +1,6 @@
 <%--
   ┌───────────────────────────────────────────────────────────────────┐
-  │ Copyright (c) 2023-2023년 8월 28일 JerryDEV All rights reserved.        │
+  │ Copyright (c) 2023-2023년 8월 28일 JerryDEV All rights reserved.   │
   └───────────────────────────────────────────────────────────────────┘
   --%>
 
@@ -9,7 +9,7 @@
 작성자 : Min Woo Song
 작성일 : 2023-08-28
 작성시간 : 오전 7:20
-작성용도 : 
+작성용도 : Post main view page jsp file
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -56,6 +56,7 @@
                     <thead>
                     <tr>
                         <th class="col-xs-1">글 번호</th>
+                        <th class="col-xs-1">카테고리</th>
                         <th class="col-xs-2">제목</th>
                         <th class="col-xs-2">작성자</th>
                         <th class="col-xs-2">작성일</th>
@@ -67,6 +68,7 @@
                     <c:forEach items="${dataList }" var="data">
                         <tr>
                             <td>${data.boardVo.board_no}</td>
+                            <td>${data.categoryVo.category_name}</td>
                             <td><a
                                     href="javascript:goPage(${data.boardVo.board_no});">${data.boardVo.board_title }</a>
                                 <span class="badge bg-teal"><i class="fa fa-comment-o"></i> + ${data.totalCommentCount}</span>

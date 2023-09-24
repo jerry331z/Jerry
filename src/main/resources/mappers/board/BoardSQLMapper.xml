@@ -8,4 +8,12 @@
         select * from jerry_board
     </select>
 
+    <select id="getBoardByCategoryList" resultType="BoardVo">
+        select * from jerry_board where category_no = #{category_no}
+    </select>
+
+    <!-- 카테고리 정보 -->
+    <select id="getCategoryByNo" resultType="CategoryVo">
+        select * from jerry_board_category where category_no = #{category_no}
+    </select>
 </mapper>

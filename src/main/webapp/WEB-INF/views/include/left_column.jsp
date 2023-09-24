@@ -69,6 +69,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="../board/list"> <i class="fa-thin fa-user-magnifying-glass"></i><span>전채글보기</span></a></li>
+                    <li><a href="../board/list?category_no=1"> <i class="fa-thin fa-user-magnifying-glass"></i><span>자유게시판</span></a></li>
+                    <li><a href="../board/list?category_no=2"> <i class="fa-thin fa-user-magnifying-glass"></i><span>사진게시판</span></a></li>
                 </ul>
             </li>
         </ul>
