@@ -31,4 +31,7 @@ public interface BoardDAO {
 
     //  게시글 카테고리 목록
     public List<CategoryVo> getCategoryList();
+
+    //  게시글 쓰기
+    public void insertWrite(BoardVo param);
 }

@@ -45,6 +45,15 @@
         <%-- Main content --%>
         <section class="content container-fluid">
 
+            <form name="writeForm" role="form" method="post">
+                <input type="hidden" id="category" name="category_no" value="">
+            </form>
+
+            <form name="listForm" role="form" method="post">
+                <input type="hidden" id="BOARD_NO" name="board_no" value="">
+                <input type="hidden" id="CATEGORY_NO" name="category_no" value="">
+            </form>
+
             <%--------------------------
               | Your Page Content Here |
               --------------------------%>
@@ -86,7 +95,7 @@
 
             <div class="box-footer">
                 <div class="pull-right">
-                    <a class="btn btn-success btn-flat" href="javascript:writePosting(${category_no});">
+                    <a class="btn btn-success btn-flat" href="javascript:writing(${category_no});">
                         <i class="fa fa-pencil"></i> 글쓰기
                     </a>
                 </div>

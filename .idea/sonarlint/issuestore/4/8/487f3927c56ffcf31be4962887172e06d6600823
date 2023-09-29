@@ -5,8 +5,6 @@ u
 java:S2293¾"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ýÿÿÿÿ
 u
 java:S2293Ï"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ýÿÿÿÿ
-u
-java:S2293õ"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ýÿÿÿÿ
 e
 java:S1192„"IDefine a constant instead of duplicating this literal "userInfo" 3 times.(ÒÑó‹øÿÿÿÿ
 b
@@ -80,7 +78,7 @@ n
 java:S3776Ÿ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(óá€ñüÿÿÿÿ
 S
 java:S2441¨"<Make "UserVo" serializable or don't store it in the session.(þ™ßÃ
-T	java:S106‡"9Replace this use of System.out or System.err by a logger.(ÆÀ¡—øÿÿÿÿ
+F	java:S106‡"+Replace this use of System.out by a logger.(ÆÀ¡—øÿÿÿÿ
 4
 java:S2119¼"Save and re-use this "Random".(¼ÝÅf
 O
@@ -95,5 +93,3 @@ T
 java:S1117Ï"8Rename "data" which hides the field declared at line 41.(š´å±ýÿÿÿÿ
 4
 java:S2119Õ"Save and re-use this "Random".(¼ÝÅf
-T
-java:S1117õ"8Rename "data" which hides the field declared at line 41.(š´å±ýÿÿÿÿ

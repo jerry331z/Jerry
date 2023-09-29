@@ -1,5 +1,5 @@
 
-m	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾¸İÀ8â£¯•¬1
-r	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÆÊÁúÿÿÿÿ8ä£¯•¬1
+m	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾¸İÀ8¹¢Ö­1
+r	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÆÊÁúÿÿÿÿ8º¢Ö­1
 P
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8ïë±•¬1
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8óæáÚ­1

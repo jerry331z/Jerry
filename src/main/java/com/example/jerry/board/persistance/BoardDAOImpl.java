@@ -63,4 +63,11 @@ public class BoardDAOImpl implements BoardDAO  {
     public List<CategoryVo> getCategoryList() {
         return sqlSession.selectList(NAMESPACE + ".getCategoryList");
     }
+
+    @Override
+    @LogException
+    //  게시글 작성
+    public void insertWrite(BoardVo param) {
+        sqlSession.insert(NAMESPACE + ".insertWrite", param);
+    }
 }

@@ -14,7 +14,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jQuery 3 -->
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
@@ -38,3 +38,5 @@
 <script src="/dist/js/user/profile.js" type="text/javascript"></script>
 <!-- Recovery Page -->
 <script src="/dist/js/user/userRecovery.js" type="text/javascript"></script>
+<!-- write posting -->
+<script src="/dist/js/board/RelatedBulletin.js" type="text/javascript"></script>

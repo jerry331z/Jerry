@@ -13,13 +13,12 @@
 
 package com.example.jerry.board.controller;
 
+import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,5 +42,12 @@ public class BoardController {
         model.addAttribute("dataList", dataList);
 
         return "board/list";
+    }
+
+    @GetMapping(value = "/write")
+    public String writePosting(@RequestParam(value = "category_no", defaultValue = "0") int category_no, @ModelAttribute("boardVo") BoardVo param, Model model) {
+        model.addAttribute("category_no", category_no);
+        model.addAttribute("list", boardService.getCategoryList());
+        return "board/write";
     }
 }

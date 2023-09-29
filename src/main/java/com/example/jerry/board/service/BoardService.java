@@ -13,6 +13,7 @@
 
 package com.example.jerry.board.service;
 
+import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.domain.CategoryVo;
 
 import java.util.ArrayList;
@@ -26,4 +27,7 @@ public interface BoardService {
 
     //  게시글 카테고리 목록
     public List<CategoryVo> getCategoryList();
+
+    //  게시글 작성
+    public void insertWrite(BoardVo param);
 }
