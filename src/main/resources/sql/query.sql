@@ -87,3 +87,17 @@ insert into jerry_board(board_no, user_no, category_no, board_title, board_conte
 values (jerry_board_seq.nextval, 1, 1, '제목', '내용', 0, sysdate);
 
 select * from jerry_board;
+
+-- 카테고리 테이블
+DROP TABLE jerry_board_category;
+CREATE TABLE jerry_board_category(
+                                     category_no      NUMBER PRIMARY KEY,
+                                     category_name    varchar2(300)
+);
+
+-- 카테고리 시퀸스
+DROP SEQUENCE jerry_board_category_seq;
+CREATE SEQUENCE jerry_board_category_seq;
+
+-- 게시판 카테고리 데이터
+INSERT INTO JERRY_BOARD_CATEGORY(category_no, category_name) VALUES (jerry_board_category_seq.nextval, '사진게시판');

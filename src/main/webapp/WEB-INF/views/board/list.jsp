@@ -50,8 +50,11 @@
             </form>
 
             <form name="listForm" role="form" method="post">
-                <input type="hidden" id="BOARD_NO" name="board_no" value="">
                 <input type="hidden" id="CATEGORY_NO" name="category_no" value="">
+            </form>
+
+            <form id="list" role="form" method="get">
+                <input type="hidden" id="category_no" name="category_no" value="">
             </form>
 
             <%--------------------------

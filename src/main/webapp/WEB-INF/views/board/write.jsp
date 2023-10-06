@@ -115,8 +115,8 @@
 
                     <div class="box-footer">
                         <div class="pull-right">
-                            <a href="#" onclick="postingList(${data.category_no});" class="btn btn-primary"><i
-                                    class="fa fa-list"></i> 목록</a>
+                            <button type="button" onclick="location.href='list?category_no=${category_no}'" class="btn btn-primary"><i
+                                    class="fa fa-list"></i> 목록</button>
                             <button type="reset" class="btn btn-warning"><i class="fa fa-reply"></i> 초기화</button>
                             <button type="button" id="writePostingButton" class="btn btn-success"><i
                                     class="fa fa-save"></i> 저장
