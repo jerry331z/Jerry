@@ -1,5 +1,6 @@
 
-r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßšÁßÿÿÿÿÿ8úÎ¬ˆ­1
-r	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÞ´ÿüÿÿÿÿ8üÎ¬ˆ­1
+r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßšÁßÿÿÿÿÿ8ÎðÚ­°1
+r	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÞ´ÿüÿÿÿÿ8ÏðÚ­°1
+r	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡•ðÒùÿÿÿÿ8ÑðÚ­°1
 j
-java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÏÊÃ×ûÿÿÿÿ8ÆÏ¬ˆ­1
+java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÏÊÃ×ûÿÿÿÿ8ŠñÚ­°1

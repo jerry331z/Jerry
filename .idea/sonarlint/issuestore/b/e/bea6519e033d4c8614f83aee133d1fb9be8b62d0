@@ -3,4 +3,7 @@ v
 java:S2293/"YReplace the type specification in this constructor call with the diamond operator ("<>").(¡É°À8É´¶¬1
 {
 java:S2293<"YReplace the type specification in this constructor call with the diamond operator ("<>").(æëïÿÿÿÿÿ8Ê´¶¬1
+{
+java:S2293X"YReplace the type specification in this constructor call with the diamond operator ("<>").(æëïÿÿÿÿÿ8Ôı­°1
 k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éœ38¢Ó´¶¬1
+m	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŸÒ˜8Õı­°1

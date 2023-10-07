@@ -15,6 +15,8 @@ package com.example.jerry.board.service;
 
 import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.domain.CategoryVo;
+import com.example.jerry.commons.annotation.LogException;
+import com.example.jerry.user.domain.UserVo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,4 +32,8 @@ public interface BoardService {
 
     //  게시글 작성
     public void insertWrite(BoardVo param);
+
+    //  게시물 상세보기
+    public HashMap<String, Object> getBoard(int board_no);
+
 }

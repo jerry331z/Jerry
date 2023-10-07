@@ -29,6 +29,14 @@ function postingList(category_no) {
     form.submit();
 }
 
+function goPage(board_no) {
+    const form = $("form[name='readForm']");
+    $("#boardNo").attr("value", board_no);
+    form.attr("action", "../board/read");
+    form.attr("method", "post");
+    form.submit();
+}
+
 window.addEventListener("DOMContentLoaded", function () {
 
     /* 게시글 작성 */

@@ -51,3 +51,5 @@ Isrc/main/java/com/example/jerry/board/controller/RestBoardController.java,d\3\
 ,src/main/webapp/WEB-INF/views/user/login.jsp,5\6\561a85f6b1493884171c682fb4eb458989bf6d94
 s
 Csrc/main/java/com/example/jerry/user/controller/UserController.java,1\a\1afbe82f8e7056b542b0e25070bcb25944f563a1
+\
+,src/main/webapp/WEB-INF/views/board/read.jsp,a\0\a0fddd665185cf835049016f063b4ecc32b6e9c9

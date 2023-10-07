@@ -57,7 +57,11 @@
                 <input type="hidden" id="category_no" name="category_no" value="">
             </form>
 
-            <%--------------------------
+            <form name="readForm" role="form" method="post">
+                <input type="hidden" id="boardNo" name="board_no" value="">
+            </form>
+
+        <%--------------------------
               | Your Page Content Here |
               --------------------------%>
             <div class="box-header with-border">

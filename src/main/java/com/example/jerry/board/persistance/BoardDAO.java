@@ -34,4 +34,8 @@ public interface BoardDAO {
 
     //  게시글 쓰기
     public void insertWrite(BoardVo param);
+
+    //  글씨기 상세보기
+    public BoardVo getBoardByNo(int board_no);
+
 }
