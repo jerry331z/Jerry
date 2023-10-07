@@ -101,3 +101,18 @@ CREATE SEQUENCE jerry_board_category_seq;
 
 -- 게시판 카테고리 데이터
 INSERT INTO JERRY_BOARD_CATEGORY(category_no, category_name) VALUES (jerry_board_category_seq.nextval, '사진게시판');
+
+--  게시글 조회수 테이블
+drop table jerry_view_page;
+create table jerry_view_page
+(
+    view_page_no      number primary key,
+    board_no          number,
+    lockup_ip         varchar(200),
+    view_inquiry_time date default sysdate,
+    constraint jerry_view_board_no foreign key (board_no) references jerry_board (board_no)
+);
+
+--  게시글 조회수 시퀸스
+drop sequence jerry_view_page_seq;
+create sequence jerry_view_page_seq;

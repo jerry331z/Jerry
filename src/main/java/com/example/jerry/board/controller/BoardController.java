@@ -14,14 +14,18 @@
 package com.example.jerry.board.controller;
 
 import com.example.jerry.board.domain.BoardVo;
+import com.example.jerry.board.domain.ViewPageVo;
 import com.example.jerry.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/board/*")
@@ -52,8 +56,43 @@ public class BoardController {
     }
 
     @PostMapping(value = "read")
-    public String detailsPosting(@RequestParam(value = "board_no", defaultValue = "0") int board_no, Model model) {
+    public String detailsPosting(@RequestParam(value = "board_no", defaultValue = "0") int board_no, Model model, HttpServletRequest request) {
 
+        /* 조회수 증가 */
+        List<ViewPageVo> viewPageVo = boardService.getViewPageList(board_no);
+        if (boardService.isSelectByViewByBoardNo(board_no)) {
+            if (!boardService.isSelectByLockupIp(request.getRemoteAddr())) {
+                ViewPageVo param = new ViewPageVo();
+                param.setBoard_no(board_no);
+                param.setLockup_ip(request.getRemoteAddr());
+
+                boardService.insertViewPage(param);
+                boardService.increaseReadCount(board_no);
+            }
+        } else {
+            ViewPageVo param = new ViewPageVo();
+            param.setBoard_no(board_no);
+            param.setLockup_ip(request.getRemoteAddr());
+
+            boardService.insertViewPage(param);
+            boardService.increaseReadCount(board_no);
+        }
+
+        for (ViewPageVo param : viewPageVo) {
+            if (param != null) {
+                if (boardService.isSelectByLockupIp(request.getRemoteAddr())) {
+                    if (param.getLockup_ip().equals(request.getRemoteAddr())) {
+                        Date writeDate = new Date(System.currentTimeMillis()); // 현재 서버 시간
+                        Date tagetDate = new Date(param.getView_inquiry_time().getTime() + 1000 * 60 * 60 * 24); // 조회한 조회 일자
+
+                        if (writeDate.after(tagetDate)) {
+                            boardService.increaseReadCount(board_no);
+                            boardService.updateViewPage(param);
+                        }
+                    }
+                }
+            }
+        }
 
         model.addAttribute("data", boardService.getBoard(board_no));
         return "board/read";
