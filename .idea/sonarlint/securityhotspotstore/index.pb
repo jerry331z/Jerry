@@ -53,3 +53,7 @@ s
 Csrc/main/java/com/example/jerry/user/controller/UserController.java,1\a\1afbe82f8e7056b542b0e25070bcb25944f563a1
 \
 ,src/main/webapp/WEB-INF/views/board/read.jsp,a\0\a0fddd665185cf835049016f063b4ecc32b6e9c9
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+\
+,src/main/webapp/WEB-INF/views/board/edit.jsp,d\6\d6eb9a7a6bb6fc885fa5bb3d7f3524bf1d4ec7c7

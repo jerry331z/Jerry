@@ -55,7 +55,7 @@ public class BoardController {
         return "board/write";
     }
 
-    @PostMapping(value = "read")
+    @GetMapping(value = "read")
     public String detailsPosting(@RequestParam(value = "board_no", defaultValue = "0") int board_no, Model model, HttpServletRequest request) {
 
         /* 조회수 증가 */
@@ -99,4 +99,12 @@ public class BoardController {
 
     }
 
+    @GetMapping(value = "edit")
+    public String modifyPosting(@RequestParam(value = "board_no", defaultValue = "0") int boardNo, Model model, @ModelAttribute("boardVo") BoardVo boardVo) {
+
+        model.addAttribute("data", boardService.getBoard(boardNo));
+        model.addAttribute("list", boardService.getCategoryList());
+
+        return "board/edit";
+    }
 }

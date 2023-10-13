@@ -33,8 +33,17 @@ function goPage(board_no) {
     const form = $("form[name='readForm']");
     $("#boardNo").attr("value", board_no);
     form.attr("action", "../board/read");
-    form.attr("method", "post");
+    form.attr("method", "get");
     form.submit();
+}
+
+function cancelPage(board_no) {
+    const form = $("form[name='detailsForm']");
+    $("#boardNo").attr("value", board_no);
+    form.attr("action", "../board/read");
+    form.attr("method", "get");
+    form.submit();
+    alert("테스트입니다... ㅎㅎ");
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -65,6 +74,12 @@ window.addEventListener("DOMContentLoaded", function () {
     $(".listBtn").click(function () {
         formObj.attr("action", "../board/list");
         formObj.attr("method", "get");
+        formObj.submit();
+    });
+
+    $(".modBtn").click(function () {
+        formObj.attr("action", "../board/edit");
+        formObj.attr("method", "read");
         formObj.submit();
     });
 });
