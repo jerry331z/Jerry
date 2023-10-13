@@ -84,4 +84,9 @@
         delete from jerry_view_page where board_no = #{boardNo}
     </delete>
 
+    <!-- 게시글 삭제 -->
+    <delete id="deletePosting">
+        delete from jerry_board where board_no = #{boardNo}
+    </delete>
+
 </mapper>

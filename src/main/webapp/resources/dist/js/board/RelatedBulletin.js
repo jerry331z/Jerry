@@ -33,7 +33,7 @@ function goPage(board_no) {
     const form = $("form[name='readForm']");
     $("#boardNo").attr("value", board_no);
     form.attr("action", "../board/read");
-    form.attr("method", "get");
+    form.attr("method", "post");
     form.submit();
 }
 
@@ -41,9 +41,8 @@ function cancelPage(board_no) {
     const form = $("form[name='detailsForm']");
     $("#boardNo").attr("value", board_no);
     form.attr("action", "../board/read");
-    form.attr("method", "get");
+    form.attr("method", "post");
     form.submit();
-    alert("테스트입니다... ㅎㅎ");
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -73,13 +72,32 @@ window.addEventListener("DOMContentLoaded", function () {
 
     $(".listBtn").click(function () {
         formObj.attr("action", "../board/list");
-        formObj.attr("method", "get");
+        formObj.attr("method", "post");
         formObj.submit();
     });
 
     $(".modBtn").click(function () {
         formObj.attr("action", "../board/edit");
-        formObj.attr("method", "read");
+        formObj.attr("method", "post");
         formObj.submit();
+    });
+
+    $(".delBtn").click(function () {
+        if (confirm("해당 게시글을 정말로 삭제 하시겠습니까??")) {
+            $.ajax({
+                type: "post",
+                url: "../board/deletePosting",
+                data: {
+                    boardNo: $("#boardNo").val()
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.result == "success") {
+                        alert("게시글 삭제에 성공 하였습니다.");
+                        location.href = "../board/list"
+                    }
+                }
+            })
+        }
     });
 });
