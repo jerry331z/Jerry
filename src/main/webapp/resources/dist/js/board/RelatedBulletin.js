@@ -97,8 +97,8 @@ window.addEventListener("DOMContentLoaded", function () {
                 if (data.result == "error") {
                     location.reload();
                 } else {
-                    alert("게시글 수정에 성공 하였습니다." + $("#boardNo").val());
-                    location.href = "../board/list";
+                    alert("게시글 수정에 성공 하였습니다.");
+                    goPage($("#updateBoardNo").val());
                 }
             }
         })

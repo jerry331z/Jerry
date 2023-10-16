@@ -28,7 +28,7 @@
         <section class="content container-fluid">
             <div class="col-lg-12">
 
-                <form name="detailsForm" role="form" method="post">
+                <form name="readForm" role="form" method="post">
                     <input type="hidden" id="boardNo" name="board_no" value="">
                 </form>
 
