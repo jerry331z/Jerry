@@ -123,8 +123,24 @@ create table jerry_board_like
     user_no   number,
     board_no  number,
     like_date date default sysdate,
-    constraint eden_like_userNo foreign key (user_no) references jerry_user (user_no),
-    constraint eden_like_boardNo foreign key (board_no) references jerry_board (board_no)
+    constraint jerry_like_userNo foreign key (user_no) references jerry_user (user_no),
+    constraint jerry_like_boardNo foreign key (board_no) references jerry_board (board_no)
 );
 
 create sequence jerry_board_like_seq;
+
+--  게시글 북마크
+drop table jerry_book_mark;
+create table jerry_book_mark
+(
+    book_mark_no number primary key,
+    board_no     number not null,
+    user_no      number not null,
+    reg_date     date default sysdate,
+    constraint bookMark_boardNo foreign key (board_no) references jerry_board (board_no),
+    constraint bookMark_userNo foreign key (user_no) references jerry_user (user_no)
+);
+
+--  게시글 북마크 시퀸스
+drop sequence jerry_book_mark_seq;
+create sequence jerry_book_mark_seq;

@@ -40,3 +40,5 @@
 <script src="/dist/js/user/userRecovery.js" type="text/javascript"></script>
 <!-- write posting -->
 <script src="/dist/js/board/RelatedBulletin.js" type="text/javascript"></script>
+<!-- bookMark -->
+<script src="/dist/js/bookmark/RelatedBookMark.js" type="text/javascript"></script>
