@@ -5,10 +5,10 @@
     <!-- 회원가입 -->
     <insert id="insertUser">
         insert into jerry_user(user_no, question_no, user_id, user_pw, user_nickname, user_gender,
-                               user_birth, user_phone, user_email)
+                               user_birth, user_phone, user_email, user_findAnswer)
         values (jerry_user_seq.nextval,
-                #{user_id},
                 #{question_no},
+                #{user_id},
                 #{user_pw},
                 #{user_nickname},
                 #{user_gender},

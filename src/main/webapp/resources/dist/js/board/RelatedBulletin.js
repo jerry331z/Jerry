@@ -82,6 +82,28 @@ window.addEventListener("DOMContentLoaded", function () {
         formObj.submit();
     });
 
+    $(".crystalBtn").click(function () {
+        $.ajax({
+            type: "post",
+            url: "../board/modifyPostingProcess",
+            data: {
+                board_no: $("#updateBoardNo").val(),
+                category_no: $("#categoryList").val(),
+                board_title: $("#title").val(),
+                board_content: $("#content").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.result == "error") {
+                    location.reload();
+                } else {
+                    alert("게시글 수정에 성공 하였습니다." + $("#boardNo").val());
+                    location.href = "../board/list";
+                }
+            }
+        })
+    });
+
     $(".delBtn").click(function () {
         if (confirm("해당 게시글을 정말로 삭제 하시겠습니까??")) {
             $.ajax({

@@ -77,7 +77,7 @@
 
                             <div class="row mt-1">
                                 <div class="col-lg-5">
-                                    <form:input path="board_title" id="title" value="${data.boardVo.board_title}"/>
+                                    <form:input path="board_title" class="form-control" id="title" value="${data.boardVo.board_title}"/>
                                 </div>
                             </div>
 
