@@ -13,6 +13,7 @@
 
 package com.example.jerry.board.persistance;
 
+import com.example.jerry.board.domain.BoardLikeVo;
 import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.domain.CategoryVo;
 import com.example.jerry.board.domain.ViewPageVo;
@@ -68,5 +69,18 @@ public interface BoardDAO {
 
     //  게시글 삭제
     public void deletePosting(int boardNo);
+
+    //  게시글 좋아요
+    public void doLike(BoardLikeVo likeVo);
+
+    //  게시글 좋아요 상태
+    public int getMyLikeCount(BoardLikeVo likeVo);
+
+    //  게시글 좋아요 취소
+    public void deleteLike(BoardLikeVo likeVo);
+
+    //  게시글 좋아요 총 갯수
+    public int getTotalLikeCount(int board_no);
+
 
 }

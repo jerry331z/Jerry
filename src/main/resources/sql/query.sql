@@ -116,3 +116,15 @@ create table jerry_view_page
 --  게시글 조회수 시퀸스
 drop sequence jerry_view_page_seq;
 create sequence jerry_view_page_seq;
+
+create table jerry_board_like
+(
+    like_no   number primary key,
+    user_no   number,
+    board_no  number,
+    like_date date default sysdate,
+    constraint eden_like_userNo foreign key (user_no) references jerry_user (user_no),
+    constraint eden_like_boardNo foreign key (board_no) references jerry_board (board_no)
+);
+
+create sequence jerry_board_like_seq;

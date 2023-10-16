@@ -13,6 +13,7 @@
 
 package com.example.jerry.board.service;
 
+import com.example.jerry.board.domain.BoardLikeVo;
 import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.domain.CategoryVo;
 import com.example.jerry.board.domain.ViewPageVo;
@@ -64,4 +65,14 @@ public interface BoardService {
     public void modifyBoard(BoardVo param);
 
     public void deletePosting(int boardNo);
+
+    //  게시글 좋아요
+    public void doLike(BoardLikeVo likeVo);
+
+    //  게시글 좋아요 상태
+    public int getMyLikeCount(BoardLikeVo likeVo);
+
+    //  게시글 좋아요 총 갯수
+    public int getTotalLikeCount(int board_no);
+
 }
