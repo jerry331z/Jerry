@@ -1,5 +1,32 @@
 
 {
-java:S2293*"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜²ªşÿÿÿÿ8·øåÛ­1
+java:S2293+"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜²ªşÿÿÿÿ8·øåÛ­1
+|
+java:S2293˜"YReplace the type specification in this constructor call with the diamond operator ("<>").(š´å±ıÿÿÿÿ8Æô—ò³1
+j
+java:S11921"HDefine a constant instead of duplicating this literal "result" 10 times.(û°‘µøÿÿÿÿ8Ğô—ò³1
+e
+java:S11929"HDefine a constant instead of duplicating this literal "success" 6 times.(ôÏÑ8Òô—ò³1
+i
+java:S11925"LDefine a constant instead of duplicating this literal "sessionUser" 3 times.(Š‡Â8Óô—ò³1
+h
+java:S11921"FDefine a constant instead of duplicating this literal "error" 4 times.(û°‘µøÿÿÿÿ8Õô—ò³1
+i
+java:S1192i"GDefine a constant instead of duplicating this literal "status" 4 times.(òšğúÿÿÿÿ8×ô—ò³1
 ‰
-java:S1319."mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(é…ÙO8ºøåÛ­1
+java:S1319/"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(é…ÙO8ºøåÛ­1
+Š
+java:S1319A"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(‚˜ø8ôô—ò³1
+Š
+java:S1319P"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(£üËŸ8öô—ò³1
+
+java:S1319["mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(äúœ“ûÿÿÿÿ8úô—ò³1
+Š
+java:S1319{"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(àòŞ8ûô—ò³1
+‹
+java:S1319—"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Óôƒ¿8ıô—ò³1
+n	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óôƒ¿8şô—ò³1
+U
+java:S1117|"8Rename "data" which hides the field declared at line 43.(¤Ü³‰8è÷—ò³1
+[
+java:S1117˜"8Rename "data" which hides the field declared at line 43.(š´å±ıÿÿÿÿ8û÷—ò³1

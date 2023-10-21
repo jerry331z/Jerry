@@ -57,3 +57,11 @@ Csrc/main/java/com/example/jerry/user/controller/UserController.java,1\a\1afbe8
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 \
 ,src/main/webapp/WEB-INF/views/board/edit.jsp,d\6\d6eb9a7a6bb6fc885fa5bb3d7f3524bf1d4ec7c7
+W
+'src/main/webapp/WEB-INF/views/index.jsp,3\0\305b3bb8194d08e1e32b17ac5f1d53c1cf0118c1
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+Å
+Q.idea/sonarlint/securityhotspotstore/3/0/305b3bb8194d08e1e32b17ac5f1d53c1cf0118c1,2\0\2057a8d32891fd51c8fad6d39bfa4bc46f8a2792
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0

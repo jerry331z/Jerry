@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (location.pathname.includes('detailsPosting')) {
+    if (location.pathname.includes('read')) {
         getMyLikeStatus();
     }
 

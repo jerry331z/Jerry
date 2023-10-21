@@ -101,8 +101,8 @@
                         <div class="box-footer">
                             <button type="button" class="btn btn-primary listBtn"><i class="fa fa-list"></i> 목록</button>
                             <div class="pull-right">
-                                <button type="button" class="btn btn-warning" onclick="cancelPage(${data.boardVo.board_no})"><i class="fa fa-trash"></i> 취소
-                                </button>
+                                <a type="button" class="btn btn-warning" href="javascript:goPage(${data.boardVo.board_no});"><i class="fa fa-trash"></i> 수정취소
+                                </a>
                                 <button type="button" class="btn btn-success crystalBtn"><i class="fa fa-save"></i> 수정
                                     저장
                                 </button>
