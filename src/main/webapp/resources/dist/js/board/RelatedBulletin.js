@@ -29,6 +29,15 @@ function postingList(category_no) {
     form.submit();
 }
 
+function paging(page, category_no) {
+    const formObj = $("form[name='listForm']");
+    $("#pageNum").attr("value", page);
+    $("#CATEGORY_NO").attr("value", category_no);
+    formObj.attr("action", "../board/postingList");
+    formObj.attr("method", "post");
+    formObj.submit();
+}
+
 function goPage(board_no) {
     const form = $("form[name='readForm']");
     $("#boardNo").attr("value", board_no);

@@ -101,6 +101,86 @@
             </div>
 
             <div class="box-footer">
+                <form id="searchForm" action="../board/list" method="get">
+                    <input type="hidden" name="category_no" value="${category_no}">
+                    <div class="form-group col-sm-2">
+                        <select name="search_category_no" class="form-control" id="categoryList">
+                            <c:forEach items="${list}" var="search">
+                                <c:choose>
+                                    <c:when test="${search_category_no == search.search_category_no}">
+                                        <option value="${search.search_category_no}" selected>
+                                                ${search.search_type}
+                                        </option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${search.search_category_no}">
+                                                ${search.search_type}
+                                        </option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="keyword" id="keywordInput"
+                                   value="${keyword}" placeholder="검색어">
+                            <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary btn-flat" id="searchBtn">
+                                        <i class="fa fa-search"></i> 검색
+                                    </button>
+                                </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="box-footer">
+                <div class="col" align="center"><!-- 페이징...UI -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <c:choose>
+                                <c:when test="${startPage <= 1}">
+                                    <li class="page-item disabled"><a class="page-link" href="#">&lt;</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="page-item"><a class="page-link"
+                                                             href="javascript:paging('${startPage - 1}', '${category_no}');">&lt;</a>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
+
+
+                            <c:forEach begin="${startPage }" end="${endPage }" var="i">
+                                <c:choose>
+                                    <c:when test="${i == currentPageNum }">
+                                        <li class="page-item active"><a class="page-link"
+                                                                        href="javascript:paging('${i}', '${category_no}');">${i}</a>
+                                        </li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li class="page-item"><a class="page-link"
+                                                                 href="javascript:paging('${i}', ${category_no});">${i}</a>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                            <c:choose>
+                                <c:when test="${endPage >= totalPageCount}">
+                                    <li class="page-item disabled"><a class="page-link">&gt;</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="page-item"><a class="page-link"
+                                                             href="javascript:paging('${endPage + 1}', '${category_no}');">&gt;</a>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="box-footer">
                 <div class="pull-right">
                     <a class="btn btn-success btn-flat" href="javascript:writing(${category_no});">
                         <i class="fa fa-pencil"></i> 글쓰기

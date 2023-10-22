@@ -13,20 +13,18 @@
 
 package com.example.jerry.board.persistance;
 
-import com.example.jerry.board.domain.BoardLikeVo;
-import com.example.jerry.board.domain.BoardVo;
-import com.example.jerry.board.domain.CategoryVo;
-import com.example.jerry.board.domain.ViewPageVo;
+import com.example.jerry.board.domain.*;
 
 import java.util.List;
 
 public interface BoardDAO {
 
     //  게시글 목록
-    public List<BoardVo> getBoardList();
+    //  게시글 목록
+    public List<BoardVo> getBoardList(int search_category_no, String keyword, int pageNum);
 
     //  게시글 목록 (카테고리별 정렬)
-    public List<BoardVo> getBoardByCategoryList(int category_no);
+    public List<BoardVo> getBoardByCategoryList(int category_no, int search_category_no, String keyword, int pageNum);
 
     //  게시글 카테고리 정보
     public CategoryVo getCategoryByNo(int category_no);
@@ -82,5 +80,9 @@ public interface BoardDAO {
     //  게시글 좋아요 총 갯수
     public int getTotalLikeCount(int board_no);
 
+    //  게시글 검색 카테고리 목록
+    public List<SearchCategoryVo> getBoardSearchCategoryList();
 
+    //  게시글 총 갯수
+    public int getBoardCount(int category_no, int search_category_no, String keyword);
 }

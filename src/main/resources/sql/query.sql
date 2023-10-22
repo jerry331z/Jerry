@@ -144,3 +144,27 @@ create table jerry_book_mark
 --  게시글 북마크 시퀸스
 drop sequence jerry_book_mark_seq;
 create sequence jerry_book_mark_seq;
+
+
+create table eden_board_search_category
+(
+    search_category_no number primary key,
+    search_type        varchar2(200) not null
+);
+
+--  게시글 검색 카테고리 시퀸스
+drop sequence eden_board_search_category_seq;
+create sequence eden_board_search_category_seq;
+
+insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
+values (eden_board_search_category_seq.nextval, '제목');
+insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
+values (eden_board_search_category_seq.nextval, '내용');
+insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
+values (eden_board_search_category_seq.nextval, '작성자');
+insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
+values (eden_board_search_category_seq.nextval, '제목+내용');
+insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
+values (eden_board_search_category_seq.nextval, '내용+작성자');
+insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
+values (eden_board_search_category_seq.nextval, '전체');

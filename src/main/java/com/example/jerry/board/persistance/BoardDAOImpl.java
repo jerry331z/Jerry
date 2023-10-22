@@ -13,10 +13,7 @@
 
 package com.example.jerry.board.persistance;
 
-import com.example.jerry.board.domain.BoardLikeVo;
-import com.example.jerry.board.domain.BoardVo;
-import com.example.jerry.board.domain.CategoryVo;
-import com.example.jerry.board.domain.ViewPageVo;
+import com.example.jerry.board.domain.*;
 import com.example.jerry.commons.annotation.LogException;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,17 +37,31 @@ public class BoardDAOImpl implements BoardDAO {
     //  게시글 목록
     @Override
     @LogException
-    public List<BoardVo> getBoardList() {
+    public List<BoardVo> getBoardList(int search_category_no, String keyword, int pageNum) {
 
-        return sqlSession.selectList(NAMESPACE + ".getBoardList");
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("search_category_no", search_category_no);
+        param.put("keyword", keyword);
+        param.put("pageNum", pageNum);
+
+        return sqlSession.selectList(NAMESPACE + ".getBoardList", param);
     }
+
 
     //  게시글 목록 (카테고리별 정렬)
     @Override
     @LogException
-    public List<BoardVo> getBoardByCategoryList(int category_no) {
-        return sqlSession.selectList(NAMESPACE + ".getBoardByCategoryList", category_no);
+    public List<BoardVo> getBoardByCategoryList(int category_no, int search_category_no, String keyword, int pageNum) {
+
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("category_no", category_no);
+        param.put("search_category_no", search_category_no);
+        param.put("keyword", keyword);
+        param.put("pageNum", pageNum);
+
+        return sqlSession.selectList(NAMESPACE + ".getBoardByCategoryList", param);
     }
+
 
     //  카테고리리 정보
     @Override
@@ -176,5 +187,24 @@ public class BoardDAOImpl implements BoardDAO {
     @LogException
     public int getTotalLikeCount(int board_no) {
         return sqlSession.selectOne(NAMESPACE + ".getTotalLikeCount", board_no);
+    }
+
+    //  게시글 검색 카테고리 목록
+    @Override
+    @LogException
+    public List<SearchCategoryVo> getBoardSearchCategoryList() {
+        return sqlSession.selectList(NAMESPACE + ".getBoardSearchCategoryList");
+    }
+
+    //  게시글 총 갯수
+    @Override
+    @LogException
+    public int getBoardCount(int category_no, int search_category_no, String keyword) {
+        HashMap<String, Object> param = new HashMap<String, Object>();
+        param.put("category_no", category_no);
+        param.put("search_category_no", search_category_no);
+        param.put("keyword", keyword);
+
+        return sqlSession.selectOne(NAMESPACE + ".getBoardCount", param);
     }
 }
