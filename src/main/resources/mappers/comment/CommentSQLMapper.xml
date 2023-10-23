@@ -16,4 +16,10 @@
         where board_no = #{board_no}
     </select>
 
+    <!-- 댓글 작성 -->
+    <insert id="writeComment">
+        insert into jerry_board_comment (comment_no, board_no, user_no, comment_content)
+        values (JERRY_BOARD_COMMENT_SEQ.nextval, #{board_no}, #{user_no}, #{comment_content})
+    </insert>
+
 </mapper>

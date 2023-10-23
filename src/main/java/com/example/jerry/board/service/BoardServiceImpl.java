@@ -15,6 +15,7 @@ package com.example.jerry.board.service;
 
 import com.example.jerry.board.domain.*;
 import com.example.jerry.board.persistance.BoardDAO;
+import com.example.jerry.comment.persistance.CommentDAO;
 import com.example.jerry.commons.annotation.LogException;
 import com.example.jerry.user.domain.UserVo;
 import com.example.jerry.user.persistance.UserDAO;
@@ -32,10 +33,13 @@ public class BoardServiceImpl implements BoardService {
 
     private final UserDAO userDAO;
 
+    private final CommentDAO commentDAO;
+
     @Autowired
-    public BoardServiceImpl(BoardDAO boardDAO, UserDAO userDAO) {
+    public BoardServiceImpl(BoardDAO boardDAO, UserDAO userDAO, CommentDAO commentDAO) {
         this.boardDAO = boardDAO;
         this.userDAO = userDAO;
+        this.commentDAO = commentDAO;
     }
 
     @Override
@@ -57,12 +61,14 @@ public class BoardServiceImpl implements BoardService {
             UserVo userVo = userDAO.getUserByNo(userNo);
             CategoryVo categoryVo = boardDAO.getCategoryByNo(boardVo.getCategory_no());
             int totalLikeCount = boardDAO.getTotalLikeCount(boardVo.getBoard_no());
+            int totalCommentCount = commentDAO.getTotalCommentCount(boardVo.getBoard_no());
 
             HashMap<String, Object> map = new HashMap<String, Object>();
             map.put("boardVo", boardVo);
             map.put("userVo", userVo);
             map.put("categoryVo", categoryVo);
             map.put("totalLikeCount", totalLikeCount);
+            map.put("totalCommentCount", totalCommentCount);
 
             data.add(map);
         }

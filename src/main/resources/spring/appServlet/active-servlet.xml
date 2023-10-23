@@ -52,6 +52,7 @@
             <mapping path="/user/profile"/>
             <mapping path="/board/*" />
             <exclude-mapping path="/board/list"/>
+            <exclude-mapping path="/board/read" />
             <beans:ref bean="authentication"/>
         </interceptor>
 
