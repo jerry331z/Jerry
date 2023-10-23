@@ -4,13 +4,17 @@
  └───────────────────────────────────────────────────────────────────┘
  */
 
-package com.example.jerry.comment.controller;
+package com.example.jerry.comment.persistance;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.example.jerry.comment.domain.CommentVo;
 
-@Controller
-@RequestMapping("/comment/*")
-public class CommentController {
+import java.util.List;
 
+public interface CommentDAO {
+
+    //  댓글 목록
+    public List<CommentVo> getCommentList(int board_no);
+
+    //  댓글 총 갯수
+    public int getTotalCommentCount(int board_no);
 }

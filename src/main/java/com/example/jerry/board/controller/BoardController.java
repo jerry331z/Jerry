@@ -16,6 +16,7 @@ package com.example.jerry.board.controller;
 import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.domain.ViewPageVo;
 import com.example.jerry.board.service.BoardService;
+import com.example.jerry.comment.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,10 +33,12 @@ import java.util.List;
 public class BoardController {
 
     private final BoardService boardService;
+    private final CommentService commentService;
 
     @Autowired
-    public BoardController(BoardService boardService) {
+    public BoardController(BoardService boardService, CommentService commentService) {
         this.boardService = boardService;
+        this.commentService = commentService;
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -115,6 +118,7 @@ public class BoardController {
         }
 
         model.addAttribute("data", boardService.getBoard(board_no));
+        model.addAttribute("dataList", commentService.getCommentList(board_no));
         return "board/read";
 
     }

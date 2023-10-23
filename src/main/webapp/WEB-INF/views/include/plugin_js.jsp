@@ -42,3 +42,5 @@
 <script src="/dist/js/board/RelatedBulletin.js" type="text/javascript"></script>
 <!-- bookMark -->
 <script src="/dist/js/bookmark/RelatedBookMark.js" type="text/javascript"></script>
+<!-- comment -->
+<script src="/dist/js/comment/RelatedComment.js" type="text/javascript"></script>

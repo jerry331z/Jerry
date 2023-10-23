@@ -12,6 +12,7 @@
         <typeAlias type="com.example.jerry.board.domain.ViewPageVo" alias="ViewPageVo" />
         <typeAlias type="com.example.jerry.bookmark.domain.BookMarkVo" alias="BookMarkVo" />
         <typeAlias type="com.example.jerry.board.domain.SearchCategoryVo" alias="SearchCategoryVo" />
+        <typeAlias type="com.example.jerry.comment.domain.CommentVo" alias="CommentVo" />
     </typeAliases>
 
 </configuration>

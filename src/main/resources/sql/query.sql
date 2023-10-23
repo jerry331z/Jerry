@@ -146,25 +146,40 @@ drop sequence jerry_book_mark_seq;
 create sequence jerry_book_mark_seq;
 
 
-create table eden_board_search_category
+create table jerry_board_search_category
 (
     search_category_no number primary key,
     search_type        varchar2(200) not null
 );
 
 --  게시글 검색 카테고리 시퀸스
-drop sequence eden_board_search_category_seq;
-create sequence eden_board_search_category_seq;
+drop sequence jerry_board_search_category_seq;
+create sequence jerry_board_search_category_seq;
 
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (eden_board_search_category_seq.nextval, '제목');
+values (jerry_board_search_category_seq.nextval, '제목');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (eden_board_search_category_seq.nextval, '내용');
+values (jerry_board_search_category_seq.nextval, '내용');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (eden_board_search_category_seq.nextval, '작성자');
+values (jerry_board_search_category_seq.nextval, '작성자');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (eden_board_search_category_seq.nextval, '제목+내용');
+values (jerry_board_search_category_seq.nextval, '제목+내용');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (eden_board_search_category_seq.nextval, '내용+작성자');
+values (jerry_board_search_category_seq.nextval, '내용+작성자');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (eden_board_search_category_seq.nextval, '전체');
+values (jerry_board_search_category_seq.nextval, '전체');
+
+drop table jerry_board_comment;
+create table jerry_board_comment(
+                                   comment_no number primary key,
+                                   board_no number,
+                                   user_no number,
+                                   comment_content varchar2(4000) default '',
+                                   comment_write_date date default sysdate,
+                                   constraint comment_boardNo foreign key(board_no) references jerry_board(board_no),
+                                   constraint comment_userNo foreign key(user_no) references jerry_user(user_no)
+);
+
+--  게시글 코멘트 시퀸스
+drop sequence jerry_board_comment_seq;
+create sequence jerry_board_comment_seq;
