@@ -1,0 +1,7 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠŠ»ð8ÙñÀ»µ1
+r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·îµ®þÿÿÿÿ8å¦ƒàµ1
+r	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÁÓ˜ýÿÿÿÿ8•ƒÌæµ1
+u	java:S116"TRename this field "NAMESPACE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô—øÍøÿÿÿÿ8ÜñÀ»µ1
+C
+java:S1170"!Make this final field static too.(ô—øÍøÿÿÿÿ8ÜñÀ»µ1

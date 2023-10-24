@@ -1,11 +1,16 @@
 
-Œ
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(’Ü»[8§éÉ£1
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(»ŠüŒùÿÿÿÿ8´¹´µ1
 
-java:S1319%"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¾ğğúÿÿÿÿ8÷û­°1
-l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ü»[8…¹¶¬1
-r	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğğúÿÿÿÿ8÷û­°1
+java:S1319$"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¾ğğúÿÿÿÿ8©—ÿ³µ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ŠüŒùÿÿÿÿ8¶¹´µ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ŠüŒùÿÿÿÿ8·¹´µ1
+r	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğğúÿÿÿÿ8ª—ÿ³µ1
+r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èíŞ‡ûÿÿÿÿ8ª—ÿ³µ1
+m	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â¬‰8ª—ÿ³µ1
+m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†æúË8¼Ï´µ1
+m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†æúË8½Ï´µ1
 p
-java:S1128"NRemove this unused import 'com.example.jerry.commons.annotation.LogException'.(Ò’¨çÿÿÿÿÿ8¨÷û­°1
+java:S1128"NRemove this unused import 'com.example.jerry.commons.annotation.LogException'.(Ò’¨çÿÿÿÿÿ8ëÙİºµ1
 ]
-java:S1128"ARemove this unused import 'com.example.jerry.user.domain.UserVo'.(İ„ë[8©÷û­°1
+java:S1128"ARemove this unused import 'com.example.jerry.user.domain.UserVo'.(İ„ë[8íÙİºµ1

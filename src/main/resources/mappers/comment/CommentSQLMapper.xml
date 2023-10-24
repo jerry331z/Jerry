@@ -22,4 +22,26 @@
         values (JERRY_BOARD_COMMENT_SEQ.nextval, #{board_no}, #{user_no}, #{comment_content})
     </insert>
 
+    <!-- 댓글 수정 -->
+    <update id="updateComment">
+        update jerry_board_comment
+        set comment_content = #{comment_content}
+        where comment_no = #{comment_no}
+          and user_no = #{user_no}
+    </update>
+
+    <!-- 댓글 삭제 -->
+    <delete id="deleteComment">
+        delete
+        from jerry_board_comment
+        where comment_no = #{comment_no}
+    </delete>
+
+    <!-- 댓글 전체 삭제-->
+    <delete id="deleteAllComment">
+        delete
+        from jerry_board_comment
+        where board_no = #{boardNo}
+    </delete>
+
 </mapper>

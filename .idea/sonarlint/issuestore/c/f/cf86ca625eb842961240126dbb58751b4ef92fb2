@@ -1,12 +1,13 @@
 
 Q
-java:S1066S"/Merge this if statement with the enclosing one.( ·ìÉùÿÿÿÿ8óÈñ¿²1
+java:S1066j"/Merge this if statement with the enclosing one.( ·ìÉùÿÿÿÿ8„ÙÕ»µ1
 Q
-java:S1066T"/Merge this if statement with the enclosing one.(ùˆ«ÿÿÿÿÿ8ôÈñ¿²1
-r	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßšÁßÿÿÿÿÿ8ÎğÚ­°1
-r	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŞ´ÿüÿÿÿÿ8ÏğÚ­°1
-m	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Äõú8öÈñ¿²1
+java:S1066k"/Merge this if statement with the enclosing one.(ùˆ«ÿÿÿÿÿ8…ÙÕ»µ1
+r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÂ²…ûÿÿÿÿ8…ÙÕ»µ1
+r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÂ²…ûÿÿÿÿ8…ÙÕ»µ1
+r	java:S117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŞ´ÿüÿÿÿÿ8†ÙÕ»µ1
+m	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Äõú8†ÙÕ»µ1
 j
-java:S4488)"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÏÊÃ×ûÿÿÿÿ8ŠñÚ­°1
+java:S4488,"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÏÊÃ×ûÿÿÿÿ8¡ÚÕ»µ1
 o
-java:S3776;"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(–Äõú8ÂÉñ¿²1
+java:S3776R"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(–Äõú8§ÚÕ»µ1
