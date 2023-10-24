@@ -6,6 +6,7 @@
 
 package com.example.jerry.comment.service;
 
+import com.example.jerry.comment.domain.CommentLikeVo;
 import com.example.jerry.comment.domain.CommentVo;
 
 import java.util.ArrayList;
@@ -27,4 +28,13 @@ public interface CommentService {
 
     //  댓글 삭제
     public void deleteComment(int comment_no);
+
+    //  댓글 좋아요
+    public void doCommentLike(CommentLikeVo like);
+
+    //  댓글 좋아요 상태
+    public int getMyCommentLikeCount(CommentLikeVo like);
+
+    //  댓글 좋아요 총 갯수
+    public int getTotalCommentLikeCount(int comment_no);
 }

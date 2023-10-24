@@ -97,11 +97,12 @@ public class BoardServiceImpl implements BoardService {
         BoardVo boardVo = boardDAO.getBoardByNo(board_no);
         UserVo userVo = userDAO.getUserByNo(boardVo.getUser_no());
         int totalLikeCount = boardDAO.getTotalLikeCount(boardVo.getBoard_no());
+        int totalCommentLikeCount = commentDAO.getTotalCommentLikeCount(boardVo.getBoard_no());
 
         map.put("userVo", userVo);
         map.put("boardVo", boardVo);
         map.put("totalLikeCount", totalLikeCount);
-
+        map.put("totalCommentLikeCount", totalCommentLikeCount);
         return map;
     }
 

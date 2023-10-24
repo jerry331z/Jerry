@@ -1,13 +1,20 @@
 
 i
-java:S11920"GDefine a constant instead of duplicating this literal "result" 3 times.(õåÿÿÿÿÿ8Ë¾Óæµ1
+java:S11921"GDefine a constant instead of duplicating this literal "result" 5 times.(õåÿÿÿÿÿ8Ë¾Óæµ1
+e
+java:S11928"HDefine a constant instead of duplicating this literal "success" 3 times.(ôÏÑ8Éàû…¶1
 Š
-java:S1319!"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(°ŒÖƒ8İš÷ßµ1
+java:S1319""mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(°ŒÖƒ8İš÷ßµ1
 ‰
-java:S1319,"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¿¯¨k8¸èáµ1
+java:S1319-"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¿¯¨k8¸èáµ1
 
-java:S1319?"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¨Ïê‹ıÿÿÿÿ8Ï¾Óæµ1
+java:S1319@"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¨Ïê‹ıÿÿÿÿ8Ï¾Óæµ1
 Š
-java:S1319K"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(û¿”¸8Ï¾Óæµ1
-m	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ŒÖƒ8¥Òößµ1
-m	java:S117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û¿”¸8Ï¾Óæµ1
+java:S1319L"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(û¿”¸8Ï¾Óæµ1
+Š
+java:S1319V"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ë‚˜¯8Ìàû…¶1
+
+java:S1319u"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(íÙøÿÿÿÿ8Íàû…¶1
+m	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ŒÖƒ8¥Òößµ1
+m	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û¿”¸8Ï¾Óæµ1
+r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÙøÿÿÿÿ8Îàû…¶1

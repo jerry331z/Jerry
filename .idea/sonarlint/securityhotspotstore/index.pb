@@ -179,3 +179,5 @@ w
 G.idea/sonarlint/issuestore/7/7/77659d44210906b771ff43d04b83cf61ded0502d,f\4\f4869e473d55199c85702b0d3468d6d086b4950a
 w
 G.idea/sonarlint/issuestore/e/0/e0ea4108d198a3d2e4e87c48063db9d2bffad652,2\a\2a9311e96aa8916b56f3a6141f738b0dde184a70
+q
+Asrc/main/java/com/example/jerry/comment/domain/CommentLikeVo.java,f\c\fcb31ced5038b640c1edb53281028c91edb77a0e

@@ -183,3 +183,16 @@ create table jerry_board_comment(
 --  게시글 코멘트 시퀸스
 drop sequence jerry_board_comment_seq;
 create sequence jerry_board_comment_seq;
+
+-- 댓글 좋아요 테이블
+create table JERRY_BOARD_COMMENT_LIKE
+(
+    comment_like_no number  primary key,
+    comment_no      number,
+    user_no         number,
+    comment_like_date date,
+    constraint comment_like_commentNo foreign key (comment_no) references jerry_board_comment (comment_no),
+    constraint comment_like_userNo foreign key (user_no) references jerry_user (user_no)
+);
+
+create sequence jerry_board_comment_like_seq;
