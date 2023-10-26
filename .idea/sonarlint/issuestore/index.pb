@@ -181,3 +181,5 @@ w
 G.idea/sonarlint/issuestore/e/0/e0ea4108d198a3d2e4e87c48063db9d2bffad652,2\a\2a9311e96aa8916b56f3a6141f738b0dde184a70
 q
 Asrc/main/java/com/example/jerry/comment/domain/CommentLikeVo.java,f\c\fcb31ced5038b640c1edb53281028c91edb77a0e
+h
+8src/main/java/com/example/jerry/board/domain/FileVo.java,8\a\8a96ac3ba781647bc09b35a31e5046d46e50904a

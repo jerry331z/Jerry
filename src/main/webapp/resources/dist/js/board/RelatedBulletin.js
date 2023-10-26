@@ -33,7 +33,7 @@ function paging(page, category_no) {
     const formObj = $("form[name='listForm']");
     $("#pageNum").attr("value", page);
     $("#CATEGORY_NO").attr("value", category_no);
-    formObj.attr("action", "../board/postingList");
+    formObj.attr("action", "../board/list");
     formObj.attr("method", "post");
     formObj.submit();
 }

@@ -194,7 +194,8 @@
     <%@ include file="../include/main_footer.jsp" %>
 
 </div>
-
+<!-- comment -->
+<script src="/dist/js/comment/RelatedComment.js" type="text/javascript"></script>
 <%@ include file="../include/plugin_js.jsp" %>
 </body>
 </html>
