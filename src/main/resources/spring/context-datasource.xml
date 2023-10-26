@@ -6,10 +6,10 @@
     <!-- Root Context: defines shared resources visible to all other web components -->
     <!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
-        <property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/>
-        <property name="username" value="scott"/>
-        <property name="password" value="scott"/>
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+        <property name="username" value="scott"></property>
+        <property name="password" value="scott"></property>
     </bean>
 
     <!-- SqlSessionFactory 객체 주입 -->

@@ -50,15 +50,15 @@ public class LogAdvice {
 
         long end = System.currentTimeMillis();
 
-        logger.info(name + type + "." + proceedingJoinPoint.getSignature().getName() + "()");
-        logger.info("Argument/Parameter : " + Arrays.toString(proceedingJoinPoint.getArgs()));
+        // logger.info(name + type + "." + proceedingJoinPoint.getSignature().getName() + "()");
+        // logger.info("Argument/Parameter : " + Arrays.toString(proceedingJoinPoint.getArgs()));
         if (result != null) {
-            logger.info("Return Value : " + result.toString());
+            //  logger.info("Return Value : " + result.toString());
         } else {
-            logger.info("Return Type : void");
+            // logger.info("Return Type : void");
         }
-        logger.info("Running Time : " + (end - start));
-        logger.info("----------------------------------------------------------------");
+        //logger.info("Running Time : " + (end - start));
+        //logger.info("----------------------------------------------------------------");
 
         return result;
     }
