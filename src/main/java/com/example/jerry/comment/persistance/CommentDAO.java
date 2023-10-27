@@ -25,6 +25,9 @@ public interface CommentDAO {
     //  댓글 수정
     public void updateComment(CommentVo commentVo);
 
+    //  내가 작성한 댓글
+    public List<CommentVo> getMyCommentList(int user_no);
+
     //  댓글 삭제
     public void deleteComment(int comment_no);
 

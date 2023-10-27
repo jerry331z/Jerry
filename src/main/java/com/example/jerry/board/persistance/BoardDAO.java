@@ -85,4 +85,7 @@ public interface BoardDAO {
 
     //  게시글 총 갯수
     public int getBoardCount(int category_no, int search_category_no, String keyword);
+
+    //  내가 작성한 글목록
+    public List<BoardVo> getMyPostList(int user_no);
 }

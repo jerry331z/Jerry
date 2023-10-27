@@ -70,4 +70,10 @@
     <select id="getTotalCommentLikeCount" resultType="int">
         select count(*) from jerry_board_comment_like where comment_no = #{comment_no}
     </select>
+
+    <!-- 내가 작성한 댓글 -->
+    <select id="getMyCommentList" resultType="CommentVo">
+        select * from jerry_board_comment where user_no = #{user_no}
+    </select>
+
 </mapper>

@@ -6,6 +6,7 @@
 
 package com.example.jerry.comment.service;
 
+import com.example.jerry.board.domain.BoardVo;
 import com.example.jerry.board.persistance.BoardDAO;
 import com.example.jerry.comment.domain.CommentLikeVo;
 import com.example.jerry.comment.domain.CommentVo;
@@ -106,6 +107,25 @@ public class CommentServiceImpl implements CommentService {
     @LogException
     public int getTotalCommentLikeCount(int comment_no) {
         return commentDAO.getTotalCommentLikeCount(comment_no);
+    }
+
+    @Override
+    @LogException
+    public ArrayList<HashMap<String, Object>> getMyCommentList(int user_no) {
+        ArrayList<HashMap<String, Object>> dataList = new ArrayList<HashMap<String, Object>>();
+        List<CommentVo> commentVoList = commentDAO.getMyCommentList(user_no);
+
+        for (CommentVo commentVo : commentVoList) {
+            BoardVo boardVo = boardDAO.getBoardByNo(commentVo.getBoard_no());
+            UserVo userVo = userDAO.getUserByNo(user_no);
+            HashMap<String, Object> map = new HashMap<String, Object>();
+            map.put("boardVo", boardVo);
+            map.put("userVo", userVo);
+            map.put("commentVo", commentVo);
+
+            dataList.add(map);
+        }
+        return dataList;
     }
 }
 

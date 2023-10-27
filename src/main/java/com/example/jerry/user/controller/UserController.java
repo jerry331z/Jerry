@@ -13,6 +13,9 @@
 
 package com.example.jerry.user.controller;
 
+import com.example.jerry.board.service.BoardService;
+import com.example.jerry.bookmark.service.BookMarkService;
+import com.example.jerry.comment.service.CommentService;
 import com.example.jerry.commons.annotation.LogException;
 import com.example.jerry.user.domain.UserVo;
 import com.example.jerry.user.service.UserService;
@@ -25,14 +28,28 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping(value = "/user/*")
 public class UserController {
 
+    private final UserService userService;
+    private final BookMarkService bookMarkService;
+    private final BoardService boardService;
+    private final CommentService commentService;
+
+
     @Autowired
-    UserService userService;
+    public UserController(UserService userService, BoardService boardService, BookMarkService bookMarkService, CommentService commentService) {
+        this.userService = userService;
+        this.boardService = boardService;
+        this.bookMarkService = bookMarkService;
+        this.commentService = commentService;
+    }
 
     /* 회원가입 페이지 */
     @LogException
@@ -69,11 +86,24 @@ public class UserController {
     }
 
     // 내정보 페이지
+// 내정보 페이지
     @GetMapping("profile")
-    @LogException
-    public String profile(Model model) {
+    public String profile(Model model, HttpSession session) {
+        UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
+
+        /* 내가 북마크한 게시글 */
+        ArrayList<HashMap<String, Object>> dataList = bookMarkService.getBookMarkList(sessionUser.getUser_no());
+
+        /* 내가 작성한 게시글 */
+        ArrayList<HashMap<String, Object>> myPostList = boardService.getMyPostList(sessionUser.getUser_no());
+
+        /* 내가 작성한 댓글 */
+        ArrayList<HashMap<String, Object>> myCommentList = commentService.getMyCommentList(sessionUser.getUser_no());
 
         model.addAttribute("data", userService.getJoinQuestionList());
+        model.addAttribute("dataList", dataList);
+        model.addAttribute("postList", myPostList);
+        model.addAttribute("commentList", myCommentList);
 
         return "user/profile";
     }

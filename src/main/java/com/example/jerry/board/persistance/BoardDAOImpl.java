@@ -207,4 +207,11 @@ public class BoardDAOImpl implements BoardDAO {
 
         return sqlSession.selectOne(NAMESPACE + ".getBoardCount", param);
     }
+
+    //  내가 작성한 게시글
+    @Override
+    @LogException
+    public List<BoardVo> getMyPostList(int user_no) {
+        return sqlSession.selectList(NAMESPACE + ".getMyPostList", user_no);
+    }
 }

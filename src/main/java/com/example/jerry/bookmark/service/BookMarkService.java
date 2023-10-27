@@ -20,4 +20,6 @@ public interface BookMarkService {
 
     //  내가 북마크한 게시글
     public ArrayList<HashMap<String, Object>> getBookMarkList(int user_no);
+
+
 }

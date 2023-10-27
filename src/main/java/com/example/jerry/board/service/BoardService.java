@@ -77,4 +77,7 @@ public interface BoardService {
 
     //  게시글 총 갯수
     public int getBoardCount(int category_no, int search_category_no, String keyword);
+
+    //  내가 쓴글
+    ArrayList<HashMap<String, Object>> getMyPostList(int user_no);
 }
