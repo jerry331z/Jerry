@@ -136,47 +136,54 @@
             </div>
 
             <div class="box-footer">
-                <div class="col" align="center"><!-- 페이징...UI -->
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <c:choose>
-                                <c:when test="${startPage <= 1}">
-                                    <li class="page-item disabled"><a class="page-link" href="#">&lt;</a></li>
-                                </c:when>
-                                <c:otherwise>
-                                    <li class="page-item"><a class="page-link"
-                                                             href="javascript:paging('${startPage - 1}', '${category_no}');">&lt;</a>
-                                    </li>
-                                </c:otherwise>
-                            </c:choose>
-
-
-                            <c:forEach begin="${startPage }" end="${endPage }" var="i">
+                <div class="row mt-3">
+                    <div class="col-3"></div>
+                    <div class="col d-grid">
+                        <nav aria-label="...">
+                            <ul class="pagination mb-0">
                                 <c:choose>
-                                    <c:when test="${i == currentPageNum }">
-                                        <li class="page-item active"><a class="page-link"
-                                                                        href="javascript:paging('${i}', '${category_no}');">${i}</a>
+                                    <c:when test="${startPage <= 1 }">
+                                        <li class="page-item disabled">
+                                            <a class="page-link">&lt;</a>
                                         </li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li class="page-item"><a class="page-link"
-                                                                 href="javascript:paging('${i}', ${category_no});">${i}</a>
+                                        <li class="page-item">
+                                            <a class="page-link" href="./list?pageNum=${startPage-1 }${additionalParam}">&lt;</a>
                                         </li>
                                     </c:otherwise>
                                 </c:choose>
-                            </c:forEach>
-                            <c:choose>
-                                <c:when test="${endPage >= totalPageCount}">
-                                    <li class="page-item disabled"><a class="page-link">&gt;</a></li>
-                                </c:when>
-                                <c:otherwise>
-                                    <li class="page-item"><a class="page-link"
-                                                             href="javascript:paging('${endPage + 1}', '${category_no}');">&gt;</a>
-                                    </li>
-                                </c:otherwise>
-                            </c:choose>
-                        </ul>
-                    </nav>
+
+                                <c:forEach begin="${startPage}" end="${endPage}" var="i">
+                                    <c:choose>
+                                        <c:when test="${currentPage == i}">
+                                            <li class="page-item active">
+                                                <a class="page-link" href="./list?pageNum=${i}${additionalParam}">${i}</a>
+                                            </li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <li class="page-item">
+                                                <a class="page-link" href="./list?pageNum=${i}${additionalParam}">${i}</a>
+                                            </li>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+
+                                <c:choose>
+                                    <c:when test="${endPage >= totalPageCount}">
+                                        <li class="page-item disabled">
+                                            <a class="page-link">&gt;</a>
+                                        </li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li class="page-item">
+                                            <a class="page-link" href="./list?pageNum=${endPage+1 }${additionalParam}">&gt;</a>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
 

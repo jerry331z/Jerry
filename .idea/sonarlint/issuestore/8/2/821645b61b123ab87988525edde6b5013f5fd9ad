@@ -1,0 +1,27 @@
+
+V
+java:S1854$"9Remove this useless assignment to local variable "start".(’Ã¼8®ı­ã¶1
+U
+java:S1854,"8Remove this useless assignment to local variable "name".(ö  –8¯ı­ã¶1
+Z
+java:S1854."8Remove this useless assignment to local variable "name".(ñ÷Ôšúÿÿÿÿ8¯ı­ã¶1
+Z
+java:S18540"8Remove this useless assignment to local variable "name".(Ú”šÅÿÿÿÿÿ8°ı­ã¶1
+T
+java:S18543"7Remove this useless assignment to local variable "end".(Ğí‰Á8±ı­ã¶1
+G
+java:S1481$"*Remove this unused "start" local variable.(’Ã¼8´ı­ã¶1
+F
+java:S1481)")Remove this unused "name" local variable.(¹·ş¸8·ı­ã¶1
+E
+java:S14813"(Remove this unused "end" local variable.(Ğí‰Á8¹ı­ã¶1
+x
+java:S39237"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ËÄÒ‚8»ı­ã¶1
+]	java:S1255"<This block of commented-out lines of code should be removed.(£óÛÅûÿÿÿÿ8¼ı­ã¶1
+X	java:S1258"<This block of commented-out lines of code should be removed.(ûÒË£8½ı­ã¶1
+X	java:S125:"<This block of commented-out lines of code should be removed.(Íİ¹ó8½ı­ã¶1
+X	java:S125<"<This block of commented-out lines of code should be removed.(÷›ú³8¾ı­ã¶1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8¾ı­ã¶1
+L
+java:S1068"*Remove this unused "logger" private field.(¼¸ÉÁøÿÿÿÿ8Âı­ã¶1
