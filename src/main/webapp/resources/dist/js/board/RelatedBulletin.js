@@ -56,29 +56,6 @@ function cancelPage(board_no) {
 
 window.addEventListener("DOMContentLoaded", function () {
 
-    /* 게시글 작성 */
-    $("#writePostingButton").click(function () {
-        $.ajax({
-            type: "post",
-            url: "../board/writePostingProcess",
-            data: {
-                category_no: $("#categoryList").val(),
-                board_title: $("#board_title").val(),
-                board_content: $("#board_content").val()
-            },
-            dataType: "json",
-            success: function (data) {
-                if (data.result == "error") {
-                    location.reload();
-                } else {
-                    alert("게시글 작성에 성공 하였습니다.");
-                    location.href = "../board/list";
-                }
-            }
-        });
-    });
-
-
     $(".listBtn").click(function () {
         formObj.attr("action", "../board/list");
         formObj.attr("method", "post");

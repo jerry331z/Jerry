@@ -41,6 +41,13 @@
         <beans:property name="cacheSeconds" value="60"/>
     </beans:bean>
 
+    <!-- ja: 파일 업로드 관련 추가 빈 -->
+    <beans:bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="maxUploadSize" value="200000000"></beans:property>
+    </beans:bean>
+
+
     <!-- 로그인 권한 인증 요청 인터셉터 -->
     <beans:bean id="authentication" class="com.example.jerry.commons.interceptor.AuthenticationInterceptor"/>
 

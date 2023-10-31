@@ -14,19 +14,26 @@
 package com.example.jerry.board.controller;
 
 import com.example.jerry.board.domain.BoardVo;
+import com.example.jerry.board.domain.FileVo;
 import com.example.jerry.board.domain.ViewPageVo;
 import com.example.jerry.board.service.BoardService;
 import com.example.jerry.comment.service.CommentService;
+import com.example.jerry.commons.annotation.LogException;
+import com.example.jerry.user.domain.UserVo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "/board/*")
@@ -121,6 +128,73 @@ public class BoardController {
         model.addAttribute("dataList", commentService.getCommentList(board_no));
         return "board/read";
 
+    }
+
+    // 게시글 작성
+    @PostMapping(value = "writePostingProcess")
+    @LogException
+    public String writePostingProcess(@Valid BoardVo param, BindingResult result, HttpSession session
+            , MultipartFile[] uploadFiles) {
+        if (result.hasErrors()) {
+            return "board/write";
+        }
+
+        ArrayList<FileVo> fileVoList = new ArrayList<FileVo>();
+
+        String uploadFolder = "C:/uploadFolder/";
+
+        if (uploadFiles != null) {
+            for (MultipartFile uploadFile : uploadFiles) {
+                if (uploadFile.isEmpty()) {
+                    continue;
+                }
+
+                // 날짜별 폴더 생성... 2022/01/19/
+                Date today = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/");
+                String folderPath = sdf.format(today);
+
+                File todayFolder = new File(uploadFolder + folderPath);
+
+                if (!todayFolder.exists()) {
+                    todayFolder.mkdirs();
+                }
+
+                // 중복되지 않게 저장해야된다...!!...
+                // 방법 : 랜덤 + 시간
+                String fileName = "";
+                UUID uuid = UUID.randomUUID();
+                fileName += uuid.toString();
+
+                long currentTime = System.currentTimeMillis();
+                fileName += "_" + currentTime;
+
+                // 확장자 추가...
+                String originalFileName = uploadFile.getOriginalFilename();
+                String ext = originalFileName.substring(originalFileName.lastIndexOf("."));
+                fileName += ext;
+
+                try {
+                    uploadFile.transferTo(new File(uploadFolder + folderPath + fileName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                FileVo fileVo = new FileVo();
+                fileVo.setOrg_file_name(originalFileName);
+                fileVo.setStored_file_name(fileName);
+                fileVoList.add(fileVo);
+            }
+        }
+
+        System.out.println(fileVoList.size());
+        System.out.println(uploadFiles);
+
+        UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
+        param.setUser_no(sessionUser.getUser_no());
+        boardService.insertWrite(param);
+
+        return "redirect:./list";
     }
 
     @PostMapping(value = "edit")

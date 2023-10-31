@@ -42,22 +42,7 @@ public class RestBoardController {
 
     private static final HashMap<String, Object> data = new HashMap<String, Object>();
 
-    @PostMapping(value = "writePostingProcess")
-    @LogException
-    public HashMap<String, Object> writePostingProcess(@Valid BoardVo param, BindingResult result, HttpSession session) {
-        if (result.hasErrors()) {
-            data.put("result", "error");
-            return data;
-        }
 
-        UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
-        param.setUser_no(sessionUser.getUser_no());
-        boardService.insertWrite(param);
-
-        data.put("result", "success");
-
-        return data;
-    }
 
     //  게시글 수정 프로시져
     @PostMapping(value = "modifyPostingProcess")

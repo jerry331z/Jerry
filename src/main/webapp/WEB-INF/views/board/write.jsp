@@ -29,8 +29,8 @@
         <section class="content container-fluid">
 
             <div class="col-lg-12">
-                <form:form action="${path}/board/writePostingProcess" modelAttribute="boardVo" id="writeForm"
-                           method="post">
+                <form:form action="./writePostingProcess" modelAttribute="boardVo"
+                           id="writeContentForm" enctype="multipart/form-data">
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">게시글 작성</h3>
@@ -99,6 +99,12 @@
                             <div class="col my-auto"><form:errors path="board_content" id="error_message"/></div>
                         </div>
 
+                        <div class="row mt-2">
+                            <div class="col">
+                                <input class="form-control form-control-sm" id="formFileSm" type="file" multiple name="uploadFiles">
+                            </div>
+                        </div>
+
                         <div class="row mt-1">
                             <div class="col-lg-5">
                                 <label for="write">게시글 작성자</label>
@@ -118,7 +124,7 @@
                             <button type="button" onclick="location.href='list?category_no=${category_no}'" class="btn btn-primary"><i
                                     class="fa fa-list"></i> 목록</button>
                             <button type="reset" class="btn btn-warning"><i class="fa fa-reply"></i> 초기화</button>
-                            <button type="button" id="writePostingButton" class="btn btn-success"><i
+                            <button type="submit" id="writePostingButton" class="btn btn-success"><i
                                     class="fa fa-save"></i> 저장
                             </button>
                         </div>
