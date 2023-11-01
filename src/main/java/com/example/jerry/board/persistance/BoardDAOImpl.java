@@ -214,4 +214,16 @@ public class BoardDAOImpl implements BoardDAO {
     public List<BoardVo> getMyPostList(int user_no) {
         return sqlSession.selectList(NAMESPACE + ".getMyPostList", user_no);
     }
+
+    @LogException
+    @Override
+    public int createBoardPk() {
+        return sqlSession.selectOne(NAMESPACE + ".createBoardPk");
+    }
+
+    @Override
+    @LogException
+    public void insertFile(FileVo file) {
+        sqlSession.insert(NAMESPACE + ".insertFile", file);
+    }
 }

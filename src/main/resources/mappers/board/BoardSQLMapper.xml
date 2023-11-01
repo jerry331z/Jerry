@@ -3,6 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.board.BoardSQLMapper">
 
+    <select id="createBoardPk" resultType="int">
+        SELECT jerry_board_seq.nextval FROM Dual
+    </select>
+
     <!-- 게시글 목록 -->
     <select id="getBoardList" resultType="BoardVo">
 
@@ -114,7 +118,7 @@
     <insert id="insertWrite">
         insert into jerry_board (board_no, user_no, category_no, board_title, board_content)
         values (
-                   jerry_board_seq.nextval,
+                   #{board_no},
                    #{user_no},
                    #{category_no},
                    #{board_title},
@@ -258,5 +262,18 @@
     <select id="getMyPostList" resultType="BoardVo">
         select * from jerry_board where user_no = #{user_no}
     </select>
+
+    <insert id="insertFile">
+        INSERT INTO jerry_file VALUES (
+                                           jerry_file_seq.nextval,
+                                           #{board_no},
+                                           #{org_file_name},
+                                           #{stored_file_name},
+                                           #{file_size},
+                                           SYSDATE,
+                                           'N'
+                                       )
+    </insert>
+
 
 </mapper>

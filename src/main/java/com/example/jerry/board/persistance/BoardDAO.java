@@ -88,4 +88,8 @@ public interface BoardDAO {
 
     //  내가 작성한 글목록
     public List<BoardVo> getMyPostList(int user_no);
+
+    public int createBoardPk();
+
+    public void insertFile(FileVo file);
 }

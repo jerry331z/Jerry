@@ -30,7 +30,7 @@ public interface BoardService {
     public List<CategoryVo> getCategoryList();
 
     //  게시글 작성
-    public void insertWrite(BoardVo param);
+    public void insertWrite(BoardVo param, ArrayList<FileVo> fileVoList);
 
     //  게시물 상세보기
     public HashMap<String, Object> getBoard(int board_no);

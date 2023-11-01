@@ -153,21 +153,21 @@ create table jerry_board_search_category
 );
 
 --  게시글 검색 카테고리 시퀸스
-drop sequence jerry_board_search_category_seq;
-create sequence jerry_board_search_category_seq;
+drop sequence jerry_search_category_seq;
+create sequence jerry_search_category_seq;
 
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (jerry_board_search_category_seq.nextval, '제목');
+values (jerry_search_category_seq.nextval, '제목');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (jerry_board_search_category_seq.nextval, '내용');
+values (jerry_search_category_seq.nextval, '내용');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (jerry_board_search_category_seq.nextval, '작성자');
+values (jerry_search_category_seq.nextval, '작성자');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (jerry_board_search_category_seq.nextval, '제목+내용');
+values (jerry_search_category_seq.nextval, '제목+내용');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (jerry_board_search_category_seq.nextval, '내용+작성자');
+values (jerry_search_category_seq.nextval, '내용+작성자');
 insert into JERRY_BOARD_SEARCH_CATEGORY (search_category_no, search_type)
-values (jerry_board_search_category_seq.nextval, '전체');
+values (jerry_search_category_seq.nextval, '전체');
 
 drop table jerry_board_comment;
 create table jerry_board_comment(
@@ -196,3 +196,18 @@ create table JERRY_BOARD_COMMENT_LIKE
 );
 
 create sequence jerry_board_comment_like_seq;
+
+DROP TABLE jerry_file;
+CREATE TABLE jerry_file(
+                           file_no NUMBER PRIMARY KEY,
+                           board_no NUMBER,
+                           org_file_name VARCHAR2(260) NOT NULL,
+                           stored_file_name VARCHAR2(100) NOT NULL,
+                           file_size NUMBER,
+                           upload_write_date DATE,
+                           file_del VARCHAR2(1) NOT NULL,
+                           CONSTRAINT file_board_no FOREIGN KEY(board_no) REFERENCES jerry_board(board_no)
+);
+
+DROP SEQUENCE jerry_file_seq;
+CREATE SEQUENCE jerry_file_seq;

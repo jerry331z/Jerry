@@ -85,8 +85,22 @@ public class BoardServiceImpl implements BoardService {
     //  게시글 작성
     @Override
     @LogException
-    public void insertWrite(BoardVo param) {
+    public void insertWrite(BoardVo param, ArrayList<FileVo> fileVoList) {
+
+        int boardNo = boardDAO.createBoardPk();
+        param.setBoard_no(boardNo);
+
+        System.out.println(param.getBoard_no());
+
         boardDAO.insertWrite(param);
+
+        for (FileVo fileVo : fileVoList) {
+            fileVo.setBoard_no(boardNo);
+
+            System.out.println(fileVo.getBoard_no());
+
+            boardDAO.insertFile(fileVo);
+        }
     }
 
     //  게시글 상세보기

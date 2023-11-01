@@ -192,7 +192,7 @@ public class BoardController {
 
         UserVo sessionUser = (UserVo) session.getAttribute("sessionUser");
         param.setUser_no(sessionUser.getUser_no());
-        boardService.insertWrite(param);
+        boardService.insertWrite(param, fileVoList);
 
         return "redirect:./list";
     }
