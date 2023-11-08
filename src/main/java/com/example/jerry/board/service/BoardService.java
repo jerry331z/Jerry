@@ -83,4 +83,6 @@ public interface BoardService {
     ArrayList<HashMap<String, Object>> getMyPostList(int user_no);
 
     public List<Map<String, Object>> selectFileList(int board_no);
+
+    public Map<String, Object> selectFileInfo(Map<String, Object> map);
 }

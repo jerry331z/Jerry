@@ -255,4 +255,10 @@ public class BoardServiceImpl implements BoardService {
     public List<Map<String, Object>> selectFileList(int bno) {
         return boardDAO.selectFileList(bno);
     }
+
+    @Override
+    public Map<String, Object> selectFileInfo(Map<String, Object> map) {
+        // TODO Auto-generated method stub
+        return boardDAO.selectFileInfo(map);
+    }
 }

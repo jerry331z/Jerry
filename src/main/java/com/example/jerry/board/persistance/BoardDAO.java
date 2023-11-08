@@ -95,4 +95,6 @@ public interface BoardDAO {
     public void insertFile(FileVo file);
 
     public List<Map<String, Object>> selectFileList(int bno);
+
+    public Map<String, Object> selectFileInfo(Map<String, Object> map);
 }

@@ -232,4 +232,9 @@ public class BoardDAOImpl implements BoardDAO {
     public List<Map<String, Object>> selectFileList(int board_no) {
         return sqlSession.selectList(NAMESPACE + ".selectFileList", board_no);
     }
+
+    @Override
+    public Map<String, Object> selectFileInfo(Map<String, Object> map) {
+        return sqlSession.selectOne(NAMESPACE + ".selectFileInfo", map);
+    }
 }

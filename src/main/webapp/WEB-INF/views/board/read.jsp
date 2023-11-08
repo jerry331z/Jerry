@@ -201,11 +201,22 @@
     </div>
 
     <%@ include file="../include/main_footer.jsp" %>
-
+    <form name="readForm" role="form" method="post">
+        <input type="hidden" id="FILE_NO" name="file_no" value="">
+        <input type="hidden" id="USER_NO" name="user_no" value="">
+    </form
 </div>
 <!-- comment -->
 <script src="/dist/js/comment/RelatedComment.js" type="text/javascript"></script>
 <%@ include file="../include/plugin_js.jsp" %>
+<script>
+    function fn_fileDown(fileNo){
+        var formObj = $("form[name='readForm']");
+        $("#FILE_NO").attr("value", fileNo);
+        formObj.attr("action", "/board/fileDown");
+        formObj.submit();
+    }
+</script>
 </body>
 </html>
 
