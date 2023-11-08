@@ -203,7 +203,7 @@ public class BoardController {
         return "redirect:./list";
     }
 
-    @PostMapping(value = "edit")
+    @GetMapping(value = "edit")
     public String modifyPosting(@RequestParam(value = "board_no", defaultValue = "0") int boardNo, Model model, @ModelAttribute("boardVo") BoardVo boardVo) {
 
         model.addAttribute("data", boardService.getBoard(boardNo));

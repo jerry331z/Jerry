@@ -43,6 +43,15 @@
                         ${fn:replace(fn:replace(fn:escapeXml(data.boardVo.board_content), newLine, "<br/>") , " ", "&nbsp;")}
                     </div>
 
+                    <box-footer>
+                        <span>파일 목록</span>
+                        <div class="form-group" style="border:4px solid #dbdbdb;">
+                            <c:forEach var="file" items="${fileList}">
+                                <a href="#" onclick="fn_fileDown('${file.FILE_NO}'); return false;">${file.ORG_FILE_NAME}</a>(${file.FILE_SIZE}kb)<br>
+                            </c:forEach>
+                        </div>
+                    </box-footer>
+
                     <%--작성자 정보 영역--%>
                     <div class="box-footer">
                         <div class="user-block">
@@ -65,13 +74,6 @@
                         </div>
                     </div>
 
-                    <span>파일 목록</span>
-                    <div class="form-group" style="border:4px solid #dbdbdb;">
-                        <c:forEach var="file" items="${fileList}">
-                            <a href="#" onclick="fn_fileDown('${file.FILE_NO}'); return false;">${file.ORG_FILE_NAME}</a>(${file.FILE_SIZE}kb)<br>
-                        </c:forEach>
-                    </div>
-
                     <div class="box-footer">
                         <form role="form" method="post">
                             <input type="hidden" id="boardNo" name="board_no" value="${data.boardVo.board_no}">
@@ -88,8 +90,8 @@
                         </c:if>
                         <c:if test="${sessionUser.user_no == data.boardVo.user_no}">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-warning modBtn"><i class="fa fa-edit"></i> 수정
-                                </button>
+                                <a href="../board/edit?board_no=${data.boardVo.board_no}&user_no=${data.boardVo.user_no}" type="button" class="btn btn-warning"><i class="fa fa-edit"></i> 수정
+                                </a>
                                 <button type="button" class="btn btn-danger delBtn"><i class="fa fa-trash"></i> 삭제
                                 </button>
                             </div>
