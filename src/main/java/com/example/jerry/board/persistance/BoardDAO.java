@@ -16,6 +16,7 @@ package com.example.jerry.board.persistance;
 import com.example.jerry.board.domain.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BoardDAO {
 
@@ -92,4 +93,6 @@ public interface BoardDAO {
     public int createBoardPk();
 
     public void insertFile(FileVo file);
+
+    public List<Map<String, Object>> selectFileList(int bno);
 }

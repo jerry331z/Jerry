@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -248,5 +249,10 @@ public class BoardServiceImpl implements BoardService {
             dataList.add(map);
         }
         return dataList;
+    }
+
+    @Override
+    public List<Map<String, Object>> selectFileList(int bno) {
+        return boardDAO.selectFileList(bno);
     }
 }

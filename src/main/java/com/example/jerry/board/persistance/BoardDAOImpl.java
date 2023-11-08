@@ -21,6 +21,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -225,5 +226,10 @@ public class BoardDAOImpl implements BoardDAO {
     @LogException
     public void insertFile(FileVo file) {
         sqlSession.insert(NAMESPACE + ".insertFile", file);
+    }
+
+    @Override
+    public List<Map<String, Object>> selectFileList(int board_no) {
+        return sqlSession.selectList(NAMESPACE + ".selectFileList", board_no);
     }
 }

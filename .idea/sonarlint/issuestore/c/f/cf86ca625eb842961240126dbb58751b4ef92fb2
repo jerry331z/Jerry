@@ -1,13 +1,19 @@
 
+|
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½ô«üÿÿÿÿ8ÇÀËî¸1
 Q
-java:S1066j"/Merge this if statement with the enclosing one.( ·ìÉùÿÿÿÿ8‹ı¡ƒ¸1
+java:S1066q"/Merge this if statement with the enclosing one.( ·ìÉùÿÿÿÿ8ÉÀËî¸1
 Q
-java:S1066k"/Merge this if statement with the enclosing one.(ùˆ«ÿÿÿÿÿ8‘ı¡ƒ¸1
-r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÂ²…ûÿÿÿÿ8’ı¡ƒ¸1
-r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÂ²…ûÿÿÿÿ8’ı¡ƒ¸1
-r	java:S117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŞ´ÿüÿÿÿÿ8“ı¡ƒ¸1
-m	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Äõú8•ı¡ƒ¸1
+java:S1066r"/Merge this if statement with the enclosing one.(ùˆ«ÿÿÿÿÿ8ÊÀËî¸1
+r	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÂ²…ûÿÿÿÿ8ËÀËî¸1
+r	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÂ²…ûÿÿÿÿ8ËÀËî¸1
+r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŞ´ÿüÿÿÿÿ8ËÀËî¸1
+m	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Äõú8ÌÀËî¸1
+q
+java:S2259®"NA "NullPointerException" could be thrown; "originalFileName" is nullable here.(åšõ¨úÿÿÿÿ8ÒÂËî¸1
 j
-java:S4488,"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÏÊÃ×ûÿÿÿÿ8í¢ƒ¸1
+java:S44883"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÏÊÃ×ûÿÿÿÿ8áÂËî¸1
 o
-java:S3776R"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(–Äõú8ƒ¢ƒ¸1
+java:S3776Y"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(–Äõú8ğÂËî¸1
+H	java:S106¾"+Replace this use of System.out by a logger.(Ã™ˆÕ8ÃËî¸1
+H	java:S106¿"+Replace this use of System.out by a logger.( ˜º„8‘ÃËî¸1

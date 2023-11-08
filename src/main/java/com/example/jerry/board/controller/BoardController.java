@@ -123,9 +123,12 @@ public class BoardController {
                 }
             }
         }
+        List<Map<String, Object>> fileList = boardService.selectFileList(board_no);
 
         model.addAttribute("data", boardService.getBoard(board_no));
         model.addAttribute("dataList", commentService.getCommentList(board_no));
+        model.addAttribute("fileList", fileList);
+
         return "board/read";
 
     }

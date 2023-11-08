@@ -20,6 +20,7 @@ import com.example.jerry.user.domain.UserVo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface BoardService {
 
@@ -80,4 +81,6 @@ public interface BoardService {
 
     //  내가 쓴글
     ArrayList<HashMap<String, Object>> getMyPostList(int user_no);
+
+    public List<Map<String, Object>> selectFileList(int board_no);
 }

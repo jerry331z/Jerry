@@ -65,6 +65,13 @@
                         </div>
                     </div>
 
+                    <span>파일 목록</span>
+                    <div class="form-group" style="border:4px solid #dbdbdb;">
+                        <c:forEach var="file" items="${fileList}">
+                            <a href="#" onclick="fn_fileDown('${file.FILE_NO}'); return false;">${file.ORG_FILE_NAME}</a>(${file.FILE_SIZE}kb)<br>
+                        </c:forEach>
+                    </div>
+
                     <div class="box-footer">
                         <form role="form" method="post">
                             <input type="hidden" id="boardNo" name="board_no" value="${data.boardVo.board_no}">
@@ -89,7 +96,8 @@
                         </c:if>
                     </div>
                 </div>
-                <%--댓글 입력 영역--%>
+
+            <%--댓글 입력 영역--%>
                 <c:if test="${!empty sessionUser}">
                     <div class="box box-warning">
                         <div class="box-header with-border">
@@ -122,6 +130,7 @@
                         </div>
                     </div>
                 </c:if>
+
                 <c:if test="${empty sessionUser}">
                     <div class="box box-warning">
                         <div class="box-header with-border">

@@ -1,0 +1,19 @@
+
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(»ŠüŒùÿÿÿÿ8˜ÍÍø¹1
+Œ
+java:S1319!"jThe type of "fileVoList" should be an interface such as "List" rather than the implementation "ArrayList".(ãÈç¬øÿÿÿÿ8šÍÍø¹1
+
+java:S1319$"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¾ğğúÿÿÿÿ8šÍÍø¹1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ŠüŒùÿÿÿÿ8œÍÍø¹1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ŠüŒùÿÿÿÿ8œÍÍø¹1
+r	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğğúÿÿÿÿ8ÍÍø¹1
+r	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èíŞ‡ûÿÿÿÿ8ÍÍø¹1
+m	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â¬‰8ÍÍø¹1
+m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†æúË8ÍÍø¹1
+m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†æúË8ÍÍø¹1
+r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ÌòÉûÿÿÿÿ8ÍÍø¹1
+p
+java:S1128"NRemove this unused import 'com.example.jerry.commons.annotation.LogException'.(Ò’¨çÿÿÿÿÿ8»¨Äø¹1
+]
+java:S1128"ARemove this unused import 'com.example.jerry.user.domain.UserVo'.(İ„ë[8¼¨Äø¹1

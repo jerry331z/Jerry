@@ -275,5 +275,13 @@
                                        )
     </insert>
 
-
+    <!-- 첨부파일 조회 -->
+    <select id="selectFileList" parameterType="int" resultType="hashMap">
+        SELECT FILE_NO,
+               ORG_FILE_NAME,
+               ROUND(FILE_SIZE/1024,1) AS FILE_SIZE
+        FROM jerry_file
+        WHERE board_no = #{board_no}
+          AND FILE_DEL = 'N'
+    </select>
 </mapper>
