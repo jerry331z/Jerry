@@ -18,7 +18,15 @@
 
 <%--head.jsp--%>
 <%@ include file="../include/head.jsp" %>
+<style>
+    .find-btn {
+        text-align: left;
+    }
 
+    .find-btn1 {
+        display: inline-block;
+    }
+</style>
 <body class="hold-transition skin-blue login-page" oncontextmenu="return false" oncopy="return false"
       oncut="return false" onpaste="return false" onselect="return false">
 <div class="wrapper">
@@ -47,24 +55,10 @@
 
             <!-- /.col -->
             <div class="row">
-
-                <div class="col-xs-4">
-                    <div class="checkbox icheck">
-                        <input type="checkbox" id="saveIdBox"> 아이디저장
-                    </div>
+                <div class="find-btn">
+                    <input type="checkbox" class="find-btn1" id="saveIdBox"> 아이디저장
+                    <input type="checkbox" class="find-btn1" id="userCookie"> 로그인유지
                 </div>
-
-                <div class="col-xs-4">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" id="userCookie"> 로그인유지
-                        </label>
-                    </div>
-                </div>
-
-                <!-- /.col -->
-
-                <!-- /.col -->
             </div>
 
             <div class="row mt-1">
@@ -86,10 +80,12 @@
             <div class="row mt-1">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
-                        <button type="button" id="findPassword" class="btn btn-primary btn-block btn-flat">PW 찾기</button>
+                        <button type="button" id="findPassword" class="btn btn-primary btn-block btn-flat">PW 찾기
+                        </button>
                     </div>
                 </div>
             </div>
+
             <!-- /.col -->
         </div>
         <%--------------------------
@@ -173,15 +169,20 @@
 
                         <div class="row mt-1">
                             <div class="col-xs-11">
-                                <input type="text" class="form-control" name="user_id" placeholder="아이디를 입력해주세요" id="findIdInput">
-                                <button type="button" class="btn btn-info pull-right btn-xs" id="findQuestionButton">힌트조회</button>
+                                <input type="text" class="form-control" name="user_id" placeholder="아이디를 입력해주세요"
+                                       id="findIdInput">
+                                <button type="button" class="btn btn-info pull-right btn-xs" id="findQuestionButton">
+                                    힌트조회
+                                </button>
                             </div>
                         </div>
 
                         <div class="row mt-1">
                             <div class="col-xs-11">
-                                <input type="text" class="form-control" name="user_findAnswer" placeholder="힌트답을 입력해주세요" id="findAnswerInput">
-                                <button type="button" class="btn btn-info pull-right btn-xs" id="findButton">답변확인</button>
+                                <input type="text" class="form-control" name="user_findAnswer" placeholder="힌트답을 입력해주세요"
+                                       id="findAnswerInput">
+                                <button type="button" class="btn btn-info pull-right btn-xs" id="findButton">답변확인
+                                </button>
                             </div>
                         </div>
 
@@ -192,7 +193,8 @@
 
                         <div class="row mt-1">
                             <div class="col-xs-11">
-                                <input type="password" class="form-control" id="findPwInput" name="user_pw" placeholder="사용하실 비밀번호를 입력해주세요" disabled="disabled">
+                                <input type="password" class="form-control" id="findPwInput" name="user_pw"
+                                       placeholder="사용하실 비밀번호를 입력해주세요" disabled="disabled">
                             </div>
                         </div>
 
@@ -204,8 +206,13 @@
             </div>
             <div class="modal-footer">
                 <div class="row">
-                    <div class="col-xs-2"><button type="button" class="btn btn-danger pull-left" data-dismiss="modal">닫기</button></div>
-                    <div class="col-xs-2"><button type="button" class="btn btn-info pull-right" id="updatePW" disabled="disabled">수정</button></div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">닫기</button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-info pull-right" id="updatePW" disabled="disabled">수정
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
