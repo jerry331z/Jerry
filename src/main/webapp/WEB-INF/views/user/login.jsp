@@ -61,43 +61,26 @@
                 </div>
             </div>
 
-            <div class="row mt-1">
-                <div class="col-xs-8">
-                    <button type="button" id="loginButton" class="btn btn-primary btn-block btn-flat">
-                        <i class="fa fa-sign-in"></i> 로그인
-                    </button>
-                </div>
+            <div class="find-btn row mt-1">
+                <button type="button" id="loginButton" class="find-btn1 btn btn-primary"><i class="fa fa-sign-in"></i>
+                    로그인
+                </button>
+                <button type="button" id="findId" class="btn btn-primary find-btn1">ID 찾기</button>
+                <button type="button" id="findPassword" class="btn btn-primary find-btn1">PW 찾기
             </div>
-
-            <div class="row mt-2">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <button type="button" id="findId" class="btn btn-primary btn-block btn-flat">ID 찾기</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-1">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <button type="button" id="findPassword" class="btn btn-primary btn-block btn-flat">PW 찾기
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- /.col -->
         </div>
-        <%--------------------------
-          | Your Page Content Here |
-          --------------------------%>
+        <!-- /.col -->
     </div>
-    <%-- /.content --%>
-    <%-- /.content-wrapper --%>
+    <%--------------------------
+      | Your Page Content Here |
+      --------------------------%>
+</div>
+<%-- /.content --%>
+<%-- /.content-wrapper --%>
 
-    <%--main_footer.jsp--%>
-    <%-- Main Footer --%>
-    <%@ include file="../include/main_footer.jsp" %>
+<%--main_footer.jsp--%>
+<%-- Main Footer --%>
+<%@ include file="../include/main_footer.jsp" %>
 
 </div>
 <%-- ./wrapper --%>
